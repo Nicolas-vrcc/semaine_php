@@ -7,7 +7,7 @@
       <div class="row">
         <div class="col l6 s12">
           <h5 class="white-text">Super Voisin</h5>
-          <p class="grey-text text-lighten-4">Super Voisin est l'outil qui vous permet de mettre en avant vos super-pouvoirs, de les paratger et d'utiliser ceux de vos voisins !</p>
+          <p class="grey-text text-lighten-4">Super Voisin est l'outil qui vous permet de mettre en avant vos super-pouvoirs, de les partager et d'utiliser ceux de vos voisins !</p>
         </div>
         <div class="col l4 offset-l2 s12">
           <h5 class="white-text">Liens utiles</h5>
