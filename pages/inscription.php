@@ -1,38 +1,39 @@
 <?php
 require_once '../includes/config.php';
-require_once '../includes/header.php';
 
 if (isset($_POST['email']) && isset($_POST['password'])) {
 
-    var_dump($_POST);
+    // check if the email is already used for another account
+    $req = $pdo->prepare('SELECT ID FROM users WHERE email = :email');
+    $req->execute(array(
+        'email' => $_POST['email'],
+    ));
+    $userAlreadyHere = $req->fetch();
+    $req->closeCursor();
 
-    // // check if the email is already used for another account
-    // $req = $pdo->prepare('SELECT ID FROM users WHERE email = :email');
-    // $req->execute(array(
-    //     'email' => $_POST['email'],
-    // ));
-    // $userAlreadyHere = $req->fetch();
-    // $req->closeCursor();
+    if (filter_var($_POST['email'], FILTER_VALIDATE_EMAIL) && !empty($_POST['password']) && !$userAlreadyHere) {
 
-    // if (filter_var($_POST['email'], FILTER_VALIDATE_EMAIL) && !empty($_POST['password']) && !$userAlreadyHere) {
+        // save user to database
+        $password = password_hash($_POST['password'], PASSWORD_BCRYPT);
+        $req2 = $pdo->prepare('INSERT INTO users(email,password,first_name,location) VALUES (:email, :password, :first_name, :location)');
+        $req2->execute([
+            'email' => $_POST['email'],
+            'password' => $password,
+            'first_name' => $_POST['first_name'],
+            'location' => $_POST['location']
+        ]);
+        $req2->closeCursor();
 
-    //     // save user to database
-    //     $password = password_hash($_POST['password'], PASSWORD_BCRYPT);
-    //     $req2 = $pdo->prepare('INSERT INTO users(email,password) VALUES (:email, :password)');
-    //     $req2->execute([
-    //         'email' => $_POST['email'],
-    //         'password' => $password,
-    //     ]);
-    //     $req2->closeCursor();
-
-    //     // send welcome email
-    //     mail($_POST['email'], 'Bienvenue chez SpendWise', "Bienvenue chez SpendWise, l'application qui vous permets de dépenser malin.");
-    //     header('Location: index.php');
-    //     exit;
-    // } else {
-    //     $error = 'Erreur d\'inscription, veuillez réesayer';
-    // }
+        // send welcome email
+        mail($_POST['email'], 'Bienvenue chez Super Voisin', "Bienvenue chez SpendWise, l'application qui vous permets de dépenser malin.");
+        header('Location: ../index.php');
+        exit;
+    } else {
+        $error = 'Erreur d\'inscription, veuillez réesayer';
+    }
 }
+
+require_once '../includes/header.php';
 
 ?>
 <div class="container">
@@ -41,7 +42,7 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
             <!-- Location  -->
             <div class="row">
                 <div class="input-field col s12">
-                    <select>
+                    <select name="location">
                         <option value="" disabled selected>Choisissez votre quartier</option>
                         <option value="1">Paris 1</option>
                         <option value="2">Paris 2</option>
@@ -69,7 +70,7 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
             <!-- Skills -->
             <div class="row">
               <div class="input-field col s12">
-                <div class="chips chips-autocomplete">
+                <div name="skills" class="chips chips-autocomplete">
                 </div>
               </div>
             </div>
@@ -83,8 +84,8 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
              <!-- Contact  -->
             <div class="row">
                 <div class="input-field col s6">
-                    <input id="first_name" type="email" name="email" class="validate" required>
-                    <label for="first_name">Email</label>
+                    <input id="email" type="email" name="email" class="validate" required>
+                    <label for="email">Email</label>
                 </div>
                 <div class="input-field col s6">
                     <input id="mdp" type="password" name="password" class="validate" required>
@@ -99,6 +100,9 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
                   </button>
                 </div>
             </div>
+            <?php if (isset($error)): ?>
+            <div class="card-panel red darken-1 white-text"><?= $error ?></div>
+            <?php endif;?>
     </div>
     </form>
 </div>
