@@ -16,7 +16,7 @@
 <nav class="header_menu">
   <div class="container">
     <div class="nav-wrapper">
-      <a href="#!" class="brand-logo">Super Voisin<img src="/assets/img/logo_header.svg" alt="logo header"></a>
+      <a href="/" class="brand-logo">Super Voisin<img src="/assets/img/logo_header.svg" alt="logo header"></a>
       <ul class="right hide-on-med-and-down">
         <li><a href="badges.html"><i class="material-icons right">vpn_key</i>Se connecter</a></li>
         <li><a href="sass.html"><i class="material-icons right">account_circle</i>S'inscrire</a></li>
