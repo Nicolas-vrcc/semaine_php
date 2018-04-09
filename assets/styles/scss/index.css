@@ -1,2 +1,10 @@
 h1 {
   color: red; }
+
+nav.header_menu .nav-wrapper a {
+  display: flex;
+  flex-direction: row;
+  align-items: center; }
+  nav.header_menu .nav-wrapper a img {
+    height: 50px;
+    margin: 10px; }
