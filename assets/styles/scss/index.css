@@ -8,3 +8,6 @@ nav.header_menu .nav-wrapper a {
   nav.header_menu .nav-wrapper a img {
     height: 50px;
     margin: 10px; }
+
+footer.page-footer .footer-copyright .container {
+  text-align: center; }

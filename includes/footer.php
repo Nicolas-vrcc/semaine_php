@@ -22,7 +22,7 @@
     </div>
 
     <div class="footer-copyright">
-      <div class="container">© 2018 Équipe 6 - HETIC</div>
+      <p class="container">© 2018 Équipe 6 - HETIC</p>
     </div>
   </footer>
 	
