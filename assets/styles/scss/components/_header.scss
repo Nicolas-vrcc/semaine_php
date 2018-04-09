@@ -1,12 +1,17 @@
 nav.header_menu {
-  .nav-wrapper {
-    a {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      img {
-        height: 50px;
-        margin: 10px;
+ .container {
+    .nav-wrapper {
+      a {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        img {
+          height: 50px;
+          margin: 10px;
+        }
+      }
+      .material-icons.right {
+        margin-right: 7px;
       }
     }
   }

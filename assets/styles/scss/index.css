@@ -1,13 +1,15 @@
 h1 {
   color: red; }
 
-nav.header_menu .nav-wrapper a {
+nav.header_menu .container .nav-wrapper a {
   display: flex;
   flex-direction: row;
   align-items: center; }
-  nav.header_menu .nav-wrapper a img {
+  nav.header_menu .container .nav-wrapper a img {
     height: 50px;
     margin: 10px; }
+nav.header_menu .container .nav-wrapper .material-icons.right {
+  margin-right: 7px; }
 
 footer.page-footer .footer-copyright .container {
   text-align: center; }
