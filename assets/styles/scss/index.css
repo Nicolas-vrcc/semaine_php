@@ -13,3 +13,10 @@ nav.header_menu .container .nav-wrapper .material-icons.right {
 
 footer.page-footer .footer-copyright .container {
   text-align: center; }
+
+.messages {
+  text-align: center; }
+  .messages .error {
+    color: red; }
+  .messages .success {
+    color: green; }
