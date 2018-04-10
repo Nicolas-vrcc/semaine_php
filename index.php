@@ -21,6 +21,8 @@ if ($q === '') {
     $page = 'dashboard/logout';
 } else if ($q === 'dashboard/profile') {
     $page = 'dashboard/profile';
+} else if ($q === 'hero_profile') {
+    $page = 'hero_profile';
 }
  else {
     $page = '404';
