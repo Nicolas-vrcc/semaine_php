@@ -73,7 +73,7 @@ require_once 'views/includes/header.php'
             <div class="row">
               <div class="input-field col s12">
 								<p>
-								<label>
+								<label for="test">
                       <input id="test" type="checkbox" class="checkbox" value='informatique' name="arrayValue[]" />
 											<span>Informatique</span>
 								</label>
