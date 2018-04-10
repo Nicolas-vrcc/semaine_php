@@ -18,8 +18,8 @@
     <div class="nav-wrapper">
       <a href="/" class="brand-logo">Super Voisin<img src="/assets/img/logo_header.svg" alt="logo header"></a>
       <ul class="right hide-on-med-and-down">
-        <li><a href="/pages/connexion.php"><i class="material-icons right">vpn_key</i>Se connecter</a></li>
-        <li><a href="/pages/inscription.php"><i class="material-icons right">account_circle</i>S'inscrire</a></li>
+        <li><a href="connection"><i class="material-icons right">vpn_key</i>Se connecter</a></li>
+        <li><a href="inscription"><i class="material-icons right">account_circle</i>S'inscrire</a></li>
       </ul>
     </div>
   </div>
