@@ -1,5 +1,5 @@
 <?php
-require_once '../includes/config.php';
+require_once 'views/includes/db.php';
 
 if (isset($_POST['email']) && isset($_POST['password'])) {
 
@@ -26,15 +26,13 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
 
         // send welcome email
         mail($_POST['email'], 'Bienvenue chez Super Voisin', "Bienvenue chez SpendWise, l'application qui vous permets de dépenser malin.");
-        header('Location: ../index.php');
+        header('Location: /connection');
         exit;
     } else {
         $error = 'Erreur d\'inscription, veuillez réesayer';
     }
 }
-
-require_once '../includes/header.php';
-
+require_once 'views/includes/header.php'
 ?>
 <div class="container">
     <div class="card-panel">
@@ -108,5 +106,5 @@ require_once '../includes/header.php';
 </div>
 </div>
 <?php
-require_once '../includes/footer.php';
+require_once 'views/includes/footer.php'
 ?>

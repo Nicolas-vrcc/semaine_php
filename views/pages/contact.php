@@ -1,7 +1,6 @@
 <?php
-require_once '../includes/header.php';
+require_once 'views/includes/db.php';
 ?>
-
 <div class="container contact_form">
   <div class="card-panel">
     <div class="row">
@@ -36,7 +35,5 @@ require_once '../includes/header.php';
     </div>
   </div>
 </div>
-
 <?php
-require_once '../includes/footer.php';
-?>
+require_once 'views/includes/footer.php';

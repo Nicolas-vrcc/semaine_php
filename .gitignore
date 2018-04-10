@@ -62,8 +62,7 @@ Temporary Items
 ###########
 /dist
 /node_modules
-includes/config.php
-includes/send_email.php
+views/includes/db.php
 gulpfile.js
 package-lock.json
 package.json

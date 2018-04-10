@@ -1,5 +1,5 @@
 <?php
-require_once '../includes/config.php';
+require_once 'views/includes/db.php';
 if(isset($_SESSION['auth'])){
     header('Location: dashboard/account.php');
 }
@@ -17,8 +17,7 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
         $error = 'Email ou mot de passe incorrect';
     }
 }
-
-require_once '../includes/header.php';
+require_once 'views/includes/header.php'
 ?>
 <div class="container">
     <div class="card-panel">
@@ -46,5 +45,6 @@ require_once '../includes/header.php';
     </div>
 </div>
 <?php
-require_once '../includes/footer.php';
+require_once 'views/includes/footer.php';
 ?>
+
