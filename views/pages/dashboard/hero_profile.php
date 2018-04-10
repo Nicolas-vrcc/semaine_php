@@ -1,6 +1,6 @@
 <?php
 require_once 'views/includes/db.php';
-require_once 'views/includes/header.php';
+require_once 'views/includes/header_dashboard.php';
 ?>
 
 <div class="informations">
