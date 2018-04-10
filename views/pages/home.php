@@ -46,31 +46,37 @@ require_once 'views/includes/header.php';
 </div>
 
 <div class="exampleContainer">
-<div class="container">
-  <div class="row">
-    <h2>Des exemples de Super-Héros</h2>
-    <div class="col s12 m10 l6 profilContainer">
-      <div class="profilPicture"><img src="" alt="" ></div>
-      <div class="infoContainer">
-        <div class="location">Paris 18</div>
-        <div class="name">Claude Durluk</div>
-        <div class="skills">Garde d'enfant</div>
-        <div class="description">Dynamique, amusant et sérieux je peux garder vos enfants le soir après l’école.</div>
+  <div class="container">
+    <div class="row">
+      <h2>Des exemples de Super-Héros</h2>
+      <div class="col s12 m10 l6 profilContainer">
+        <div class="profilPicture"><img src="" alt="" ></div>
+        <div class="infoContainer">
+          <div class="location">Paris - 18</div>
+          <div class="name">Claude Durluk</div>
+          <div class="skills">Garde d'enfant</div>
+          <div class="description">Dynamique, amusant et sérieux je peux garder vos enfants le soir après l’école.</div>
+        </div>
       </div>
-    </div>
-    
-    <div class="col s12 m10 l6 profilContainer">
-      <div class="profilPicture"><img src="" alt="" ></div>
-      <div class="infoContainer">
-        <div class="location">Paris 18</div>
-        <div class="name">Juliette Pititou</div>
-        <div class="skills">Informatique / Art / Cours</div>
-        <div class="description">Etudiante en école de web je propose des cours sur photoshop et illustrator ainsi que la réalisation de vos logotypes et maquettes web.</div>
+
+      <div class="col s12 m10 l6 profilContainer">
+        <div class="profilPicture">
+          <img src="" alt="" >
+        </div>
+        <div class="infoContainer">
+          <div class="location">Paris - 16</div>
+          <div class="name">Juliette Pititou</div>
+          <div class="skills">Informatique / Art / Cours</div>
+          <div class="description">Etudiante en école de web je propose des cours sur photoshop et illustrator ainsi que la réalisation de vos logotypes et maquettes web.</div>
+        </div>
       </div>
+      <div class="col l4 offset-l4 buttonContainer">
+        <a class="waves-effect waves-light btn-large" href=""><p>Decouvrez d'autres profils</p></a>
+      </div>
+      
+
     </div>
-    
   </div>
-</div>
 </div>
 
 <?php
