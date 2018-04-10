@@ -237,6 +237,71 @@ footer.page-footer {
   .messages .success {
     color: #35BBAD; }
 
+div.informations {
+  background: #00B7DB;
+  padding: 20px 0; }
+  div.informations .container.informations .row .col.s4.profile_photo .photo_container {
+    overflow: hidden;
+    background: #FBFBFB;
+    width: 250px;
+    height: 250px;
+    border-radius: 100%; }
+    div.informations .container.informations .row .col.s4.profile_photo .photo_container img {
+      object-fit: cover;
+      width: 250px;
+      height: 250px; }
+  div.informations .container.informations .row .col.s8 {
+    font-family: 'lato', sans-serif;
+    color: #FBFBFB; }
+    div.informations .container.informations .row .col.s8 p.location {
+      font-size: 15px;
+      margin: 0; }
+    div.informations .container.informations .row .col.s8 p.name {
+      font-family: 'bangers';
+      font-size: 40px;
+      margin: -10px 0; }
+    div.informations .container.informations .row .col.s8 p.age {
+      font-size: 25px;
+      margin: 10px 0; }
+    div.informations .container.informations .row .col.s8 p.description {
+      font-size: 25px;
+      margin: 10px 0; }
+
+.container.center-align.choice-contact {
+  font-family: 'lato', sans-serif;
+  font-weight: 700;
+  margin-top: -35px; }
+  .container.center-align.choice-contact div.row div.col.s8.offset-s2 div.skills {
+    display: flex;
+    flex-direction: row;
+    justify-content: center; }
+    .container.center-align.choice-contact div.row div.col.s8.offset-s2 div.skills p.skill {
+      background: #DFDFDF;
+      border-radius: 30px;
+      margin: 10px 5px;
+      padding: 5px 15px; }
+    .container.center-align.choice-contact div.row div.col.s8.offset-s2 div.skills p.skill:hover {
+      background: #00B7DB;
+      color: #FFFFFF;
+      cursor: pointer; }
+  .container.center-align.choice-contact div.row div.col.s8.offset-s2 div.price {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center; }
+    .container.center-align.choice-contact div.row div.col.s8.offset-s2 div.price p.amount {
+      font-family: 'bangers';
+      font-size: 35px;
+      color: #00B7DB;
+      margin: 0; }
+    .container.center-align.choice-contact div.row div.col.s8.offset-s2 div.price img {
+      width: 35px;
+      height: 35px; }
+  .container.center-align.choice-contact div.row div.col.s8.offset-s2 button.btn.waves-effect.waves-light {
+    background: #FED42D;
+    transform: skew(-25deg);
+    padding: 0 30px; }
+
 .float-right {
   float: right; }
 
@@ -245,3 +310,4 @@ footer.page-footer {
 
 .bangers {
   font-family: bangers; }
+
