@@ -1,5 +1,5 @@
 body {
-    background: #dfdfdf;
+    
 }
 
 // connexion-panel 
@@ -20,7 +20,7 @@ body {
     .buttonContainer {
         margin-top: 350px;
         text-align: center;
-        transform: skewX(-35deg);
+        transform: skewX(-25deg);
         .btn-large {
             line-height: 25px;
         }
@@ -28,7 +28,7 @@ body {
             background: #AF0C13;
         }
         p {
-            transform: skewX(35deg);
+            transform: skewX(25deg);
         }
     }
     .supercoinman {
@@ -42,7 +42,11 @@ body {
 
 .stepIndicator {
     color: #272727;
+    height: 400px;
+    background: #dfdfdf;
     h2 {
+        margin-top: 0;
+        padding-top: 30px;
         font-family: 'bangers';
         font-size: 30px;
         text-align: center;
@@ -81,6 +85,7 @@ body {
     background: #fbfbfb;
 
     h2{
+        margin-top: 0;
         font-family: 'bangers';
         font-size: 30px;
         text-align: center;
@@ -98,10 +103,11 @@ body {
 
         .profilPicture{
             margin-top: 50px;
+            margin-left: 30px;
             width: 120px;
             height: 120px;
             border-radius: 50%;
-            background: #000;
+            background: #AF0C13;
         }
         .infoContainer
         {
@@ -117,8 +123,24 @@ body {
 
             .description
             {
-                margin-top: 20px;
+                margin-top: 10px;
             }
+        }
+    }
+
+    .buttonContainer {
+        margin: 0 auto;
+        margin-top: 30px;
+        text-align: center;
+        transform: skewX(-25deg);
+        .btn-large {
+            line-height: 15px;
+        }
+        a {
+            background: #AF0C13;
+        }
+        p {
+            transform: skewX(25deg);
         }
     }
 
