@@ -130,7 +130,5 @@ footer.page-footer .footer-copyright .container {
 
 .messages {
   text-align: center; }
-  .messages .error {
-    color: red; }
   .messages .success {
-    color: green; }
+    color: #35BBAD; }
