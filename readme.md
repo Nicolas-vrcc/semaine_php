@@ -10,7 +10,8 @@ We want to connect people who need services (quickly or not) with individuals or
  - Download the .zip, unzip it, and use servor generator like MamP. 
 
 ## Features:
- - 
+ - Connection and exit dashboard
+ - Contact form with e-mail sending
 
 ## Next features:
  - 
