@@ -14,3 +14,10 @@ var instance = M.Chips.init(elem, {
         minLength: 1
     }
 })
+
+
+var elem = document.querySelector('.carousel');
+var instance = M.Carousel.init(elem, {
+
+indicators:true
+});
