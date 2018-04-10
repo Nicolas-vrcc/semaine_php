@@ -15,7 +15,7 @@
           <ul>
             <li><a class="grey-text text-lighten-3" href="#!">CGV</a></li>
             <li><a class="grey-text text-lighten-3" href="#!">F.A.Q.</a></li>
-            <li><a class="grey-text text-lighten-3" href="/pages/contact.php">Nous contacter</a></li>
+            <li><a class="grey-text text-lighten-3" href="/contact">Nous contacter</a></li>
             <li><a class="grey-text text-lighten-3" href="#!">Recrutement</a></li>
           </ul>
         </div>

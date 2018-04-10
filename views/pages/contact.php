@@ -1,5 +1,6 @@
 <?php
 require_once 'views/includes/db.php';
+require_once 'views/includes/header.php';
 ?>
 <div class="container contact_form">
   <div class="card-panel">
