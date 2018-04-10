@@ -1,4 +1,5 @@
-  <!-- Compiled and minified JavaScript -->
+  </main>
+ <!-- Compiled and minified JavaScript -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
   <script src="/assets/js/main.js"></script>
 
@@ -14,7 +15,7 @@
           <ul>
             <li><a class="grey-text text-lighten-3" href="#!">CGV</a></li>
             <li><a class="grey-text text-lighten-3" href="#!">F.A.Q.</a></li>
-            <li><a class="grey-text text-lighten-3" href="#!">Nous contacter</a></li>
+            <li><a class="grey-text text-lighten-3" href="/pages/contact.php">Nous contacter</a></li>
             <li><a class="grey-text text-lighten-3" href="#!">Recrutement</a></li>
           </ul>
         </div>

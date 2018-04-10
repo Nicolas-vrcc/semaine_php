@@ -98,5 +98,20 @@ nav.header_menu .container .nav-wrapper a {
 nav.header_menu .container .nav-wrapper .material-icons.right {
   margin-right: 7px; }
 
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column; }
+
+main {
+  flex: 1 0 auto; }
+
 footer.page-footer .footer-copyright .container {
   text-align: center; }
+
+.messages {
+  text-align: center; }
+  .messages .error {
+    color: red; }
+  .messages .success {
+    color: green; }
