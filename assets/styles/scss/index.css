@@ -134,3 +134,12 @@ footer.page-footer .footer-copyright .container {
     color: red; }
   .messages .success {
     color: green; }
+
+.float-right {
+  float: right; }
+
+.float-left {
+  float: left; }
+
+.bangers {
+  font-family: bangers; }
