@@ -107,6 +107,8 @@
 @media screen and (max-width: 1000px) {
   .supercoinman {
     display: none; } }
+nav.header_menu .container .nav-wrapper .brand-logo {
+  font-family: 'bangers'; }
 nav.header_menu .container .nav-wrapper a {
   display: flex;
   flex-direction: row;

@@ -1,6 +1,9 @@
 nav.header_menu {
  .container {
     .nav-wrapper {
+      .brand-logo {
+        font-family: 'bangers';
+      }
       a {
         display: flex;
         flex-direction: row;
