@@ -11,7 +11,7 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
     if (isset($user) && password_verify($_POST['password'], $user->password)) {
         session_start();
         $_SESSION['auth'] = $user;
-        header('Location: dashboard/account.php');
+        header('Location: dashboard/account');
         exit();
     } else {
         $error = 'Email ou mot de passe incorrect';
