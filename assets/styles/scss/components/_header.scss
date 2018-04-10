@@ -1,6 +1,11 @@
 nav.header_menu {
+  background-color: #00B7DB;
  .container {
     .nav-wrapper {
+      .brand-logo {
+        font-size: 40px;
+        font-family: 'bangers';
+      }
       a {
         display: flex;
         flex-direction: row;
@@ -12,6 +17,10 @@ nav.header_menu {
       }
       .material-icons.right {
         margin-right: 7px;
+      }
+      li {
+        font-family: 'Lato', sans-serif;
+        font-size: 15px;
       }
     }
   }
