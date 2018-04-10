@@ -239,6 +239,7 @@ footer.page-footer {
 
 div.informations {
   background: #00B7DB;
+  margin-top: 5px;
   padding: 20px 0; }
   div.informations .container.informations .row .col.s4.profile_photo .photo_container {
     overflow: hidden;
