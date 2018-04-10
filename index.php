@@ -11,11 +11,18 @@ if ($q === '') {
     $page = 'home';
 } else if ($q === 'contact') {
     $page = 'contact';
-} else if ($q === 'connection') {
-    $page = 'connection';
+} else if ($q === 'connexion') {
+    $page = 'connexion';
 } else if ($q === 'inscription') {
     $page = 'inscription';
-} else {
+} else if ($q === 'dashboard/account') {
+    $page = 'dashboard/account';
+} else if ($q === 'dashboard/logout') {
+    $page = 'dashboard/logout';
+} else if ($q === 'dashboard/profile') {
+    $page = 'dashboard/profile';
+}
+ else {
     $page = '404';
 }
 

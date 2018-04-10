@@ -18,8 +18,9 @@
     <div class="nav-wrapper">
       <a href="/" class="brand-logo">Super Voisin<img src="/assets/img/logo_header.svg" alt="logo header"></a>
       <ul class="right hide-on-med-and-down">
-        <li><a href="connexion"><i class="material-icons right">vpn_key</i>Se connecter</a></li>
-        <li><a href="inscription"><i class="material-icons right">account_circle</i>S'inscrire</a></li>
+        <li><a href="/dashboard/account"><i class="material-icons right">room_service</i>Trouver un héros</a></li>
+        <li><a href="/dashboard/profile"><i class="material-icons right">perm_identity</i>Profil</a></li>
+        <li><a href="/dashboard/logout"><i class="material-icons right">power_settings_new</i>Déconnexion</a></li>
       </ul>
     </div>
   </div>
