@@ -41,3 +41,50 @@ div.informations {
     }
   }
 }
+
+.container.center-align.choice-contact {
+  font-family: 'lato', sans-serif;
+  font-weight: 700;
+  margin-top: -35px;
+  div.row {
+    div.col.s8.offset-s2 {
+      div.skills {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        p.skill {
+          background: #DFDFDF;
+          border-radius: 30px;
+          margin: 10px 5px;
+          padding: 5px 15px;
+        }
+        p.skill:hover {
+          background: #00B7DB;
+          color: #FFFFFF;
+          cursor: pointer;
+        }
+      }
+      div.price {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        p.amount {
+          font-family: 'bangers';
+          font-size: 35px;
+          color: #00B7DB;
+          margin: 0;
+        }
+        img {
+          width: 35px;
+          height: 35px;
+        }
+      }
+      button.btn.waves-effect.waves-light {
+        background: #FED42D;
+        transform: skew(-25deg);
+        padding: 0 30px;
+      }
+    }
+  }
+}
