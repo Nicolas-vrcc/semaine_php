@@ -148,3 +148,33 @@ footer.page-footer {
   text-align: center; }
   .messages .success {
     color: #35BBAD; }
+
+div.informations {
+  background: #00B7DB;
+  padding: 20px 0; }
+  div.informations .container.informations .row .col.s4.profile_photo .photo_container {
+    overflow: hidden;
+    background: #FBFBFB;
+    width: 250px;
+    height: 250px;
+    border-radius: 100%; }
+    div.informations .container.informations .row .col.s4.profile_photo .photo_container img {
+      object-fit: cover;
+      width: 250px;
+      height: 250px; }
+  div.informations .container.informations .row .col.s8 {
+    font-family: 'lato', sans-serif;
+    color: #FBFBFB; }
+    div.informations .container.informations .row .col.s8 p.location {
+      font-size: 15px;
+      margin: 0; }
+    div.informations .container.informations .row .col.s8 p.name {
+      font-family: 'bangers';
+      font-size: 40px;
+      margin: -10px 0; }
+    div.informations .container.informations .row .col.s8 p.age {
+      font-size: 25px;
+      margin: 10px 0; }
+    div.informations .container.informations .row .col.s8 p.description {
+      font-size: 25px;
+      margin: 10px 0; }

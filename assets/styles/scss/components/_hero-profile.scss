@@ -1,0 +1,43 @@
+div.informations {
+  background: #00B7DB;
+  padding: 20px 0;
+  .container.informations {
+    .row {
+      .col.s4.profile_photo {
+        .photo_container {
+          overflow: hidden;
+          background: #FBFBFB;
+          width: 250px;
+          height: 250px;
+          border-radius: 100%;
+          img {
+            object-fit: cover;
+            width: 250px;
+            height: 250px;
+          }
+        }
+      }
+      .col.s8 {
+        font-family: 'lato', sans-serif;
+        color: #FBFBFB;
+        p.location {
+          font-size: 15px;
+          margin: 0;
+        }
+        p.name {
+          font-family: 'bangers';
+          font-size: 40px;
+          margin: -10px 0;
+        }
+        p.age {
+          font-size: 25px;
+          margin: 10px 0;
+        }
+        p.description {
+          font-size: 25px;
+          margin: 10px 0;
+        }
+      }
+    }
+  }
+}
