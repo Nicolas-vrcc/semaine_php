@@ -107,17 +107,23 @@
 @media screen and (max-width: 1000px) {
   .supercoinman {
     display: none; } }
-nav.header_menu .container .nav-wrapper .brand-logo {
-  font-family: 'bangers'; }
-nav.header_menu .container .nav-wrapper a {
-  display: flex;
-  flex-direction: row;
-  align-items: center; }
-  nav.header_menu .container .nav-wrapper a img {
-    height: 50px;
-    margin: 10px; }
-nav.header_menu .container .nav-wrapper .material-icons.right {
-  margin-right: 7px; }
+nav.header_menu {
+  background-color: #00B7DB; }
+  nav.header_menu .container .nav-wrapper .brand-logo {
+    font-size: 40px;
+    font-family: 'bangers'; }
+  nav.header_menu .container .nav-wrapper a {
+    display: flex;
+    flex-direction: row;
+    align-items: center; }
+    nav.header_menu .container .nav-wrapper a img {
+      height: 50px;
+      margin: 10px; }
+  nav.header_menu .container .nav-wrapper .material-icons.right {
+    margin-right: 7px; }
+  nav.header_menu .container .nav-wrapper li {
+    font-family: 'Lato', sans-serif;
+    font-size: 15px; }
 
 body {
   display: flex;
