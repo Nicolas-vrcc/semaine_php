@@ -1,3 +1,11 @@
+@font-face {
+  font-family: 'bangers';
+  src: url("/assets/fonts/Bangers-Regular.woff2") format("woff2"), url("/assets/fonts/Bangers-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal; }
+body {
+  background: #dfdfdf; }
+
 .connexion-panel {
   background: #fbfbfb;
   height: 550px;
