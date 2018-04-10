@@ -239,6 +239,7 @@ footer.page-footer {
 
 div.informations {
   background: #00B7DB;
+  margin-top: 5px;
   padding: 20px 0; }
   div.informations .container.informations .row .col.s4.profile_photo .photo_container {
     overflow: hidden;
@@ -302,6 +303,29 @@ div.informations {
     transform: skew(-25deg);
     padding: 0 30px; }
 
+.container.center-align.stars p.stars {
+  font-family: 'bangers';
+  font-size: 45px;
+  margin: 0 10px; }
+.container.center-align.stars div.col.s10.offset-s1.card {
+  font-family: 'lato', sans-serif; }
+  .container.center-align.stars div.col.s10.offset-s1.card .row .col.s2.profile-picture {
+    margin: 5px; }
+    .container.center-align.stars div.col.s10.offset-s1.card .row .col.s2.profile-picture .photo_container {
+      overflow: hidden;
+      background: #FBFBFB;
+      width: 95px;
+      height: 95px;
+      border-radius: 100%; }
+      .container.center-align.stars div.col.s10.offset-s1.card .row .col.s2.profile-picture .photo_container img {
+        object-fit: cover;
+        width: 95px;
+        height: 95px; }
+  .container.center-align.stars div.col.s10.offset-s1.card .row .col.s3.note p.name {
+    font-family: 'bangers';
+    font-size: 25px;
+    margin: 10px; }
+
 .float-right {
   float: right; }
 
@@ -310,4 +334,3 @@ div.informations {
 
 .bangers {
   font-family: bangers; }
-

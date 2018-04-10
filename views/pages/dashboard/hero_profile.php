@@ -7,7 +7,7 @@ require_once 'views/includes/header.php';
   <div class="container informations">
     <div class="row">
       <div class="col s4 profile_photo">
-        <div class="photo_container valign-wrapper">
+        <div class="photo_container">
           <img class="responsive-img" src="/assets/img/marijooj.jpg" alt="profile picture">
         </div>
       </div>
@@ -34,6 +34,30 @@ require_once 'views/includes/header.php';
         <img src="/assets/img/supercoin.svg" alt="Super Coin">
       </div>
       <button class="btn waves-effect waves-light" type="submit" name="action">Contacter</button>
+    </div>
+  </div>
+</div>
+
+<div class="container center-align stars">
+  <p class="stars">Avis</p>
+  <div class="col s10 offset-s1 card">
+    <div class="row">
+      <div class="col s2 profile-picture">
+        <div class="photo_container">
+          <img class="responsive-img" src="/assets/img/marijooj.jpg" alt="profile picture">
+        </div>
+      </div>
+      <div class="col s3 note">
+        <p class="name">Paul Ducul</p>
+        <i class="material-icons">star</i>
+        <i class="material-icons">star</i>
+        <i class="material-icons">star</i>
+        <i class="material-icons">star_border</i>
+        <i class="material-icons">star_border</i>
+      </div>
+      <div class="col s6 valign-wrapper left-align comment">
+        <p class="comment">Bon cours mais pas assez complets à mon goût ! J'ai du apprendre à fuuf la jeej tout seul...</p>
+      </div>
     </div>
   </div>
 </div>
