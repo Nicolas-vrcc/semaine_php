@@ -3,6 +3,9 @@ require_once 'views/includes/db.php';
 
 if (isset($_POST['email']) && isset($_POST['password'])) {
 
+		$checkBoxValue = join(", ", $_POST['arrayValue']);
+		var_dump($checkBoxValue);
+
     // check if the email is already used for another account
     $req = $pdo->prepare('SELECT ID FROM users WHERE email = :email');
     $req->execute(array(
@@ -15,12 +18,13 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
 
         // save user to database
         $password = password_hash($_POST['password'], PASSWORD_BCRYPT);
-        $req2 = $pdo->prepare('INSERT INTO users(email,password,first_name,location) VALUES (:email, :password, :first_name, :location)');
+        $req2 = $pdo->prepare('INSERT INTO users(email,password,first_name,location,skills) VALUES (:email, :password, :first_name, :location, :skills)');
         $req2->execute([
             'email' => $_POST['email'],
             'password' => $password,
             'first_name' => $_POST['first_name'],
-            'location' => $_POST['location']
+						'location' => $_POST['location'],
+						'skills' => $checkBoxValue
         ]);
         $req2->closeCursor();
 
@@ -68,8 +72,18 @@ require_once 'views/includes/header.php'
             <!-- Skills -->
             <div class="row">
               <div class="input-field col s12">
-                <div name="skills" class="chips chips-autocomplete">
-                </div>
+								<p>
+								<label for="test">
+                      <input id="test" type="checkbox" class="checkbox" value='informatique' name="arrayValue[]" />
+											<span>Informatique</span>
+								</label>
+								</p>
+								<p>
+								<label>
+                      <input id="test" type="checkbox" class="checkbox" value='babysitting' name="arrayValue[]" />
+											<span>Babysitting</span>
+								</label>
+								</p>
               </div>
             </div>
             <!-- First Name  -->
@@ -99,7 +113,7 @@ require_once 'views/includes/header.php'
                 </div>
             </div>
             <?php if (isset($error)): ?>
-            <div class="card-panel red darken-1 white-text"><?= $error ?></div>
+            <div class="card-panel red darken-1 white-text"><?=$error?></div>
             <?php endif;?>
     </div>
     </form>

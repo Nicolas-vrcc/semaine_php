@@ -1,7 +1,8 @@
 <?php
+session_start();
 require_once 'views/includes/db.php';
 if(isset($_SESSION['auth'])){
-    header('Location: dashboard/account.php');
+    header('Location: dashboard/account');
 }
 
 if (isset($_POST['email']) && isset($_POST['password'])) {
@@ -9,7 +10,6 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
     $req->execute(['email' => $_POST['email']]);
     $user = $req->fetch();
     if (isset($user) && password_verify($_POST['password'], $user->password)) {
-        session_start();
         $_SESSION['auth'] = $user;
         header('Location: dashboard/account');
         exit();
@@ -40,6 +40,9 @@ require_once 'views/includes/header.php'
                     <i class="material-icons right">send</i>
                   </button>
                 </div>
+                <?php if(isset($error)): ?>
+                
+                <?php endif; ?>
             </div>
         </form>
     </div>
