@@ -9,7 +9,7 @@
     <!-- Material icons  -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700" rel="stylesheet">
     <!-- Style -->
     <link rel="stylesheet" href="/assets/styles/scss/index.css">
     <!-- Favicon -->
