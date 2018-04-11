@@ -32,10 +32,12 @@ numVisible:1
 });
 
 //Map in hero profile
-console.log($coord)
+const latitude = coord[0]
+const longitude = coord[1]
+
 function initMap() {
     var map = new google.maps.Map(document.getElementById('map'), {
-      center: {lat: 48.856614, lng: 2.352222},
+      center: {lat: latitude, lng: longitude},
       zoom: 12
     });
 
