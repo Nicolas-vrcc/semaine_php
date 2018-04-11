@@ -67,6 +67,9 @@ echo '</pre>';
 					</div>
 				</div>
 			</form>
+			<?php if (isset($error)): ?>
+        <div class="card-panel red darken-1 white-text"><?=$error?></div>
+      <?php endif;?>
 		</div>
   </div>
 </div>
