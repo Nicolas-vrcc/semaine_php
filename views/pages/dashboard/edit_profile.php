@@ -8,9 +8,8 @@ var_dump($_SESSION);
 echo '</pre>';
 ?>
 
-
 <div class="container title_edit_profil">
-  <h1 class="center bangers">Modifiez notre profil de super-héros</h1>
+  <h1 class="center bangers">Modifiez votre profil de super-héros</h1>
 </div>
 
 <div class="container">

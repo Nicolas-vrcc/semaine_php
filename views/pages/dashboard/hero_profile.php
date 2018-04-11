@@ -81,7 +81,7 @@ $coord = array($profil->latitude, $profil->longitude);
 
 <div class="container map">
   <div class="row title">
-    <p class="title center-align">Où se trouve votre héros :</p>
+    <p class="title center-align">Où peut se déplacer votre héros :</p>
   </div>
 
   <div class="row map">
