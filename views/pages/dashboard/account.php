@@ -2,7 +2,7 @@
 session_start();
 require_once 'views/includes/logged_only.php';
 require_once 'views/includes/db.php';
-$res = $pdo->query('SELECT first_name, ID, location, skills FROM users');
+$res = $pdo->query('SELECT first_name, ID, location, skills, latitude, longitude, bio, avatar_picture FROM users');
 $data = $res->fetchAll();
 // var_dump($data);
 var_dump($_SESSION['auth']);
@@ -52,12 +52,14 @@ require_once 'views/includes/header_dashboard.php';
             <div class="card-panel grey lighten-5">
                 <div class="row valign-wrapper">
                 <div class="col s2">
-                <img src="http://lorempicsum.com/simpsons/255/200/2" alt="user_picture" class="circle responsive-img">
+                <img src=<?= $user->avatar_picture ?> alt="user_picture" class="circle responsive-img">
                 </div>
                 <div class="col s1"></div>
                 <div class="col s9">
                 <p><?= $user->location ?></h4>
-                <h4><?= $user->first_name ?></h4>
+                <h5><?= $user->first_name ?></h5>
+                <div class="checklabel"><?= $user->skills ?></div>
+                <p><?= $user->bio ?></p>
                  <a href='hero_profile?id=<?= $user->ID ?>' class="btn-floating btn-large waves-effect waves-light red float-right"><i class="material-icons">add</i></a>
                 </div>
                 </div>

@@ -21,7 +21,6 @@ var options = {
 };
 
 autocomplete = new google.maps.places.Autocomplete(input, options)
-console.log(input)
 
 
 const slider = document.querySelector('.carousel');
