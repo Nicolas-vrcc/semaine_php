@@ -4,9 +4,9 @@
   font-weight: normal;
   font-style: normal; }
 .connexion-panel {
-  background: #fbfbfb;
-  height: 550px;
   box-shadow: 0px 2px 2px #9e9e9e; }
+  .connexion-panel .row {
+    margin-bottom: 0; }
   .connexion-panel .titleContainer {
     position: absolute;
     top: 150px; }
@@ -15,12 +15,13 @@
       font-family: 'bangers'; }
   .connexion-panel .buttonContainer {
     margin-top: 350px;
+    margin-bottom: 150px;
     text-align: center;
     transform: skewX(-25deg); }
     .connexion-panel .buttonContainer .btn-large {
       line-height: 25px; }
     .connexion-panel .buttonContainer a {
-      background: #AF0C13; }
+      background: #FFD42C; }
     .connexion-panel .buttonContainer p {
       transform: skewX(25deg); }
   .connexion-panel .supercoinman {
@@ -30,9 +31,11 @@
 
 .stepIndicator {
   color: #272727;
-  height: 400px;
   background: #dfdfdf; }
+  .stepIndicator .row {
+    margin-bottom: 0; }
   .stepIndicator h2 {
+    color: #00B7DB;
     margin-top: 0;
     padding-top: 30px;
     font-family: 'bangers';
@@ -51,7 +54,7 @@
     color: #fbfbfb;
     margin: 0 auto;
     border-radius: 50%;
-    background: #AF0C13;
+    background: #00B7DB;
     text-align: center;
     line-height: 48px; }
   .stepIndicator .stepDescription {
@@ -61,9 +64,9 @@
     width: 250px; }
 
 .exampleContainer {
-  height: 500px;
   background: #fbfbfb; }
   .exampleContainer h2 {
+    color: #00B7DB;
     margin-top: 0;
     font-family: 'bangers';
     font-size: 30px;
@@ -72,7 +75,7 @@
   .exampleContainer .profilContainer {
     margin-top: 30px;
     position: relative;
-    height: 220px;
+    height: 250px;
     background: #F7F7F7;
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5); }
     .exampleContainer .profilContainer .profilPicture {
@@ -81,10 +84,9 @@
       width: 120px;
       height: 120px;
       border-radius: 50%;
-      background: #AF0C13; }
+      background: #00B7DB; }
     .exampleContainer .profilContainer .infoContainer {
       position: absolute;
-      width: 200px;
       left: 50%;
       top: 20px; }
       .exampleContainer .profilContainer .infoContainer .name {
@@ -95,13 +97,99 @@
   .exampleContainer .buttonContainer {
     margin: 0 auto;
     margin-top: 30px;
+    margin-bottom: 30px;
     text-align: center;
     transform: skewX(-25deg); }
     .exampleContainer .buttonContainer .btn-large {
       line-height: 15px; }
     .exampleContainer .buttonContainer a {
-      background: #AF0C13; }
+      background: #FFD42C; }
     .exampleContainer .buttonContainer p {
+      transform: skewX(25deg); }
+
+.bannerContainer {
+  background: #00B7DB; }
+  .bannerContainer h2 {
+    margin-top: 50px;
+    font-family: 'bangers';
+    font-size: 30px; }
+  .bannerContainer .row {
+    margin-bottom: 0; }
+  .bannerContainer .banner1 {
+    color: #F7F7F7; }
+    .bannerContainer .banner1 .subtitle {
+      margin-bottom: 50px; }
+  .bannerContainer .banner2 {
+    text-align: center; }
+    .bannerContainer .banner2 .example {
+      display: inline-block;
+      background: #FFD42C;
+      color: #272727;
+      line-height: 40px;
+      padding: 0px 10px;
+      height: 40px;
+      border-radius: 30px;
+      margin-top: 40px;
+      margin-bottom: 50px;
+      margin-left: 40px;
+      font-size: 16px; }
+
+.bannerContainer.b2 {
+  background: #F7F7F7; }
+
+.whyContainer {
+  background: #00B7DB; }
+  .whyContainer .row {
+    margin-bottom: 0; }
+  .whyContainer h2 {
+    text-align: center;
+    margin-top: 0px;
+    padding-top: 50px;
+    font-family: 'bangers';
+    font-size: 30px; }
+  .whyContainer .card {
+    background: #F7F7F7;
+    color: #272727;
+    margin-bottom: 30px; }
+
+.commentContainer {
+  background: #F7F7F7; }
+  .commentContainer .row {
+    margin-bottom: 0; }
+  .commentContainer .title {
+    text-align: center;
+    margin-top: 0;
+    padding-top: 40px;
+    font-family: 'bangers';
+    font-size: 30px; }
+  .commentContainer p {
+    padding-top: 60px; }
+  .commentContainer .carousel {
+    margin-bottom: 30px;
+    background: #dfdfdf;
+    height: 250px; }
+
+.catContainer {
+  background: #00B7DB; }
+  .catContainer h2 {
+    text-align: center;
+    margin-top: 0;
+    padding-top: 30px;
+    font-family: 'bangers';
+    font-size: 30px; }
+  .catContainer .row {
+    margin-bottom: 0; }
+  .catContainer .buttonContainer {
+    margin: 0 auto;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    text-align: center;
+    transform: skewX(-25deg); }
+    .catContainer .buttonContainer .btn-large {
+      line-height: 15px; }
+    .catContainer .buttonContainer a {
+      background: #FFD42C; }
+    .catContainer .buttonContainer p {
       transform: skewX(25deg); }
 
 @media screen and (max-width: 1000px) {
@@ -148,6 +236,95 @@ footer.page-footer {
   text-align: center; }
   .messages .success {
     color: #35BBAD; }
+
+div.informations {
+  background: #00B7DB;
+  margin-top: 5px;
+  padding: 20px 0; }
+  div.informations .container.informations .row .col.s4.profile_photo .photo_container {
+    overflow: hidden;
+    background: #FBFBFB;
+    width: 250px;
+    height: 250px;
+    border-radius: 100%; }
+    div.informations .container.informations .row .col.s4.profile_photo .photo_container img {
+      object-fit: cover;
+      width: 250px;
+      height: 250px; }
+  div.informations .container.informations .row .col.s8 {
+    font-family: 'lato', sans-serif;
+    color: #FBFBFB; }
+    div.informations .container.informations .row .col.s8 p.location {
+      font-size: 15px;
+      margin: 0; }
+    div.informations .container.informations .row .col.s8 p.name {
+      font-family: 'bangers';
+      font-size: 40px;
+      margin: -10px 0; }
+    div.informations .container.informations .row .col.s8 p.age {
+      font-size: 25px;
+      margin: 10px 0; }
+    div.informations .container.informations .row .col.s8 p.description {
+      font-size: 25px;
+      margin: 10px 0; }
+
+.container.center-align.choice-contact {
+  font-family: 'lato', sans-serif;
+  font-weight: 700;
+  margin-top: -35px; }
+  .container.center-align.choice-contact div.row div.col.s8.offset-s2 div.skills {
+    display: flex;
+    flex-direction: row;
+    justify-content: center; }
+    .container.center-align.choice-contact div.row div.col.s8.offset-s2 div.skills p.skill {
+      background: #DFDFDF;
+      border-radius: 30px;
+      margin: 10px 5px;
+      padding: 5px 15px; }
+    .container.center-align.choice-contact div.row div.col.s8.offset-s2 div.skills p.skill:hover {
+      background: #00B7DB;
+      color: #FFFFFF;
+      cursor: pointer; }
+  .container.center-align.choice-contact div.row div.col.s8.offset-s2 div.price {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center; }
+    .container.center-align.choice-contact div.row div.col.s8.offset-s2 div.price p.amount {
+      font-family: 'bangers';
+      font-size: 35px;
+      color: #00B7DB;
+      margin: 0; }
+    .container.center-align.choice-contact div.row div.col.s8.offset-s2 div.price img {
+      width: 35px;
+      height: 35px; }
+  .container.center-align.choice-contact div.row div.col.s8.offset-s2 button.btn.waves-effect.waves-light {
+    background: #FED42D;
+    transform: skew(-25deg);
+    padding: 0 30px; }
+
+.container.center-align.stars p.stars {
+  font-family: 'bangers';
+  font-size: 45px;
+  margin: 0 10px; }
+.container.center-align.stars div.col.s10.offset-s1.card {
+  font-family: 'lato', sans-serif; }
+  .container.center-align.stars div.col.s10.offset-s1.card .row .col.s2.profile-picture {
+    margin: 5px; }
+    .container.center-align.stars div.col.s10.offset-s1.card .row .col.s2.profile-picture .photo_container {
+      overflow: hidden;
+      background: #FBFBFB;
+      width: 95px;
+      height: 95px;
+      border-radius: 100%; }
+      .container.center-align.stars div.col.s10.offset-s1.card .row .col.s2.profile-picture .photo_container img {
+        object-fit: cover;
+        width: 95px;
+        height: 95px; }
+  .container.center-align.stars div.col.s10.offset-s1.card .row .col.s3.note p.name {
+    font-family: 'bangers';
+    font-size: 25px;
+    margin: 10px; }
 
 .float-right {
   float: right; }
