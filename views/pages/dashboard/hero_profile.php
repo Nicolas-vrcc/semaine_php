@@ -93,7 +93,7 @@ $coord = array($profil->latitude, $profil->longitude);
   </div>
 </div>
 
-?>
+
 <script type="text/javascript">
   const coord = <?= json_encode($coord); ?>
 </script>
