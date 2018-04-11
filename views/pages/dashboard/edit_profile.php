@@ -1,6 +1,6 @@
 <?php
 require_once 'views/includes/db.php';
-require_once 'views/includes/header.php';
+require_once 'views/includes/header_dashboard.php';
 
 echo '<pre>';
 var_dump($_POST);
@@ -43,7 +43,7 @@ echo '</pre>';
 
             <div class="col s9 content_form">
                 <h3 class="sub_title bangers">Super-pouvoirs</h3>
-                <? require_once 'checkbox-php.php';?>
+                <? require_once 'checkbox.php';?>
             </div>
 
             <div class="col s9 content_form offset-s3">

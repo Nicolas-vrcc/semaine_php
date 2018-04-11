@@ -318,7 +318,8 @@ div.informations {
       background: #DFDFDF;
       border-radius: 30px;
       margin: 10px 5px;
-      padding: 5px 15px; }
+      padding: 5px 15px;
+      text-transform: capitalize; }
     .container.center-align.choice-contact div.row div.col.s8.offset-s2 div.skills p.skill:hover {
       background: #00B7DB;
       color: #FFFFFF;
@@ -340,6 +341,29 @@ div.informations {
     background: #FED42D;
     transform: skew(-25deg);
     padding: 0 30px; }
+
+.container.center-align.stars p.stars {
+  font-family: 'bangers';
+  font-size: 45px;
+  margin: 0 10px; }
+.container.center-align.stars div.col.s10.offset-s1.card {
+  font-family: 'lato', sans-serif; }
+  .container.center-align.stars div.col.s10.offset-s1.card .row .col.s2.profile-picture {
+    margin: 5px; }
+    .container.center-align.stars div.col.s10.offset-s1.card .row .col.s2.profile-picture .photo_container {
+      overflow: hidden;
+      background: #FBFBFB;
+      width: 95px;
+      height: 95px;
+      border-radius: 100%; }
+      .container.center-align.stars div.col.s10.offset-s1.card .row .col.s2.profile-picture .photo_container img {
+        object-fit: cover;
+        width: 95px;
+        height: 95px; }
+  .container.center-align.stars div.col.s10.offset-s1.card .row .col.s3.note p.name {
+    font-family: 'bangers';
+    font-size: 25px;
+    margin: 10px; }
 
 .float-right {
   float: right; }
@@ -377,7 +401,7 @@ div.informations {
     color: #272727;
     font-family: lato; }
 
-label.checklabel {
+.checklabel {
   display: inline-block;
   padding: 5px 10px;
   margin: 5px;
