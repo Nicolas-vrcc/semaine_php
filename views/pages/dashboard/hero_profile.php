@@ -3,15 +3,19 @@ require_once 'views/includes/db.php';
 require_once 'views/includes/header_dashboard.php';
  
 //Get the profile of the current user
-$users = $pdo->prepare('SELECT id,email,first_name,age,location,skills,avatar_picture,bio FROM users WHERE ID = :id');
+$users = $pdo->prepare('SELECT ID,email,first_name,location,skills,avatar_picture,bio,latitude,longitude FROM users WHERE ID = :id');
 $users->execute(['id' => $_GET['id']]);
 $profil = $users->fetchAll();
- 
+
+
 //Get comments and grades from the user concerned by the hero profile
 $comments = $pdo->prepare('SELECT users.first_name AS user_name, grades.stars AS stars, grades.comment AS comment FROM users, grades WHERE users.ID = grades.writer_id AND grades.concerned_user_id = :id');
 $comments->execute(['id' => $_GET['id']]);
 $datas = $comments->fetchAll();
- 
+
+echo '<pre>';
+var_dump($datas);
+echo '</pre>';
 //Get the skills string of the current user
 foreach($profil as $_profil){$skills = $_profil->skills;}
 //Convert string of skills into an array to display separately in the folowwing code
@@ -25,13 +29,12 @@ $skills = explode(',', $skills);
     <div class="row">
       <div class="col s4 profile_photo">
         <div class="photo_container">
-          <img class="responsive-img" src="https://api.adorable.io/avatars/250/<?= $_profil->first_name?>" alt="profile picture">
+          <img class="responsive-img" src="<?= $_profil->avatar_picture?>" alt="profile picture">
         </div>
       </div>
       <div class="col s8">
-        <p class="location">Paris <?= $_profil->location; ?>e</p>
+        <p class="location"><?= $_profil->location; ?></p>
         <p class="name"><?= $_profil->first_name; ?></p>
-        <p class="age"><?= $_profil->age ?> ans</p>
         <p class="description"><?= $_profil->bio ?></p>
       </div>
     </div>
@@ -44,7 +47,7 @@ $skills = explode(',', $skills);
       <p class="text">Choisissez la catégorie pour laquelle vous avez besoin de ce super-héros avant de le contacter :</p>
       <div class="skills">
         <?php foreach($skills as $_skill): ?>
-        <p class="skill"><?= $_skill ?></p>
+          <span class="skill"><?= $_skill ?></span>
         <?php endforeach ?>
       </div>
       <div class="price center">
@@ -84,11 +87,12 @@ $skills = explode(',', $skills);
 </div>
 
 <div class="container map">
-  <div class="row">
+  <div class="row title">
     <p class="title center-align">Où se trouve votre héros :</p>
   </div>
 
-  <div class="row">
+  <div class="row map">
+    <div id="map" class="col s12 center-align"></div>
   </div>
 </div>
  

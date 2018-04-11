@@ -299,20 +299,17 @@ div.informations {
   font-family: 'lato', sans-serif;
   font-weight: 700;
   margin-top: -35px; }
-  .container.center-align.choice-contact div.row div.col.s8.offset-s2 div.skills {
-    display: flex;
-    flex-direction: row;
-    justify-content: center; }
-    .container.center-align.choice-contact div.row div.col.s8.offset-s2 div.skills p.skill {
-      background: #DFDFDF;
-      border-radius: 30px;
-      margin: 10px 5px;
-      padding: 5px 15px;
-      text-transform: capitalize; }
-    .container.center-align.choice-contact div.row div.col.s8.offset-s2 div.skills p.skill:hover {
-      background: #00B7DB;
-      color: #FFFFFF;
-      cursor: pointer; }
+  .container.center-align.choice-contact div.row div.col.s8.offset-s2 div.skills span.skill {
+    background: #DFDFDF;
+    border-radius: 30px;
+    margin: 5px 5px;
+    padding: 5px 15px;
+    display: inline-block;
+    text-transform: capitalize; }
+  .container.center-align.choice-contact div.row div.col.s8.offset-s2 div.skills span.skill:hover {
+    background: #00B7DB;
+    color: #FFFFFF;
+    cursor: pointer; }
   .container.center-align.choice-contact div.row div.col.s8.offset-s2 div.price {
     display: flex;
     flex-direction: row;
@@ -326,10 +323,11 @@ div.informations {
     .container.center-align.choice-contact div.row div.col.s8.offset-s2 div.price img {
       width: 35px;
       height: 35px; }
-  .container.center-align.choice-contact div.row div.col.s8.offset-s2 button.btn.waves-effect.waves-light {
+  .container.center-align.choice-contact div.row div.col.s8.offset-s2 a button.btn.waves-effect.waves-light {
     background: #FED42D;
     transform: skew(-25deg);
-    padding: 0 30px; }
+    padding: 0 30px;
+    margin-bottom: 25px; }
 
 .container.center-align.stars p.stars {
   font-family: 'bangers';
@@ -354,9 +352,11 @@ div.informations {
     font-size: 25px;
     margin: 10px; }
 
-.container.map .row p.title {
+.container.map .row.title p.title {
   font-family: 'bangers';
   font-size: 45px; }
+.container.map .row.map #map {
+  height: 100%; }
 
 .float-right {
   float: right; }
