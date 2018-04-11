@@ -48,28 +48,27 @@ div.informations {
   margin-top: -35px;
   div.row {
     div.col.s8.offset-s2 {
-      div.skills {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        p.skill {
-          background: #DFDFDF;
-          border-radius: 30px;
-          margin: 10px 5px;
-          padding: 5px 15px;
-          text-transform: capitalize;
+        div.skills {
+          span.skill {
+            background: #DFDFDF;
+            border-radius: 30px;
+            margin: 5px 5px;
+            padding: 5px 15px;
+            display: inline-block;
+            text-transform: capitalize;
+          }
+          span.skill:hover {
+            background: #00B7DB;
+            color: #FFFFFF;
+            cursor: pointer;
+          }
         }
-        p.skill:hover {
-          background: #00B7DB;
-          color: #FFFFFF;
-          cursor: pointer;
-        }
-      }
       div.price {
         display: flex;
         flex-direction: row;
         justify-content: center;
         align-items: center;
+        margin-top: 10px;
         p.amount {
           font-family: 'bangers';
           font-size: 35px;
@@ -81,10 +80,13 @@ div.informations {
           height: 35px;
         }
       }
-      button.btn.waves-effect.waves-light {
-        background: #FED42D;
-        transform: skew(-25deg);
-        padding: 0 30px;
+      a {
+        button.btn.waves-effect.waves-light {
+          background: #FED42D;
+          transform: skew(-25deg);
+          padding: 0 30px;
+          margin-bottom: 25px;
+        }
       }
     }
   }
@@ -121,6 +123,22 @@ div.informations {
           margin: 10px;
         }
       }
+    }
+  }
+}
+
+
+.container.map {
+  .row.title {
+    p.title {
+      font-family: 'bangers';
+      font-size: 45px;
+      margin-bottom: 10px;
+    }
+  }
+  .row.map {
+    #map {
+      height: 500px;
     }
   }
 }

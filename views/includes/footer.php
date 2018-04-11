@@ -24,7 +24,7 @@
    <!-- Compiled and minified JavaScript -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
   <!-- Maps API -->
-<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDNj6Ao4vyLXmFpltuu8EnyYKYbF1HNXCM&libraries=places"></script>
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDNj6Ao4vyLXmFpltuu8EnyYKYbF1HNXCM&libraries=places&libraries=drawing&callback=initMap" async defer></script>
 <!-- Main JS -->
 <script src="/assets/js/main.js"></script>
 </body>
