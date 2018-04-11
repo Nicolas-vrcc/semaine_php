@@ -21,8 +21,9 @@ var instance = M.Chips.init(elem, {
 })
 
 
-var elem = document.querySelector('.carousel');
-var instance = M.Carousel.init(elem, {
+const elem = document.querySelector('.carousel');
+const instance = M.Carousel.init(elem, {
 
-indicators:true
+indicators:true,
+numVisible:1
 });
