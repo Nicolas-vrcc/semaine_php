@@ -48,10 +48,6 @@ $coord = array($profil->latitude, $profil->longitude);
           <span class="skill"><?= $_skill ?></span>
         <?php endforeach ?>
       </div>
-      <div class="price center">
-        <p class="amount">30</p>
-        <img src="/assets/img/supercoin.svg" alt="Super Coin">
-      </div>
       <a href="mailto:<?= $profil->email?>"><button class="btn waves-effect waves-light" type="submit" name="action">Contacter</button></a>
     </div>
   </div>
@@ -93,7 +89,7 @@ $coord = array($profil->latitude, $profil->longitude);
   </div>
 </div>
 
-?>
+
 <script type="text/javascript">
   const coord = <?= json_encode($coord); ?>
 </script>
