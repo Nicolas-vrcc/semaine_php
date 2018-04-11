@@ -26,7 +26,7 @@ echo '</pre>';
     <div class="row">
       <div class="col s4 profile_photo">
         <div class="photo_container">
-          <img class="responsive-img" src="/assets/img/<?= $_profil->avatar_picture ?>.jpg" alt="profile picture">
+          <img class="responsive-img" src="https://api.adorable.io/avatars/250/<?= $_profil->first_name?>" alt="profile picture">
         </div>
       </div>
       <div class="col s8">
