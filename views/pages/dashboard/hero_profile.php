@@ -3,7 +3,7 @@ require_once 'views/includes/db.php';
 require_once 'views/includes/header_dashboard.php';
  
 //Get the profile of the current user
-$users = $pdo->prepare('SELECT id,first_name,age,location,skills,avatar_picture,bio FROM users WHERE ID = :id');
+$users = $pdo->prepare('SELECT id,email,first_name,age,location,skills,avatar_picture,bio FROM users WHERE ID = :id');
 $users->execute(['id' => $_GET['id']]);
 $profil = $users->fetchAll();
  
@@ -51,7 +51,7 @@ $skills = explode(',', $skills);
         <p class="amount">30</p>
         <img src="/assets/img/supercoin.svg" alt="Super Coin">
       </div>
-      <button class="btn waves-effect waves-light" type="submit" name="action">Contacter</button>
+      <a href="mailto:<?= $_profil->email?>"><button class="btn waves-effect waves-light" type="submit" name="action">Contacter</button></a>
     </div>
   </div>
 </div>
