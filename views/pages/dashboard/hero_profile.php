@@ -58,6 +58,7 @@ echo '</pre>';
 </div>
 <?php endforeach; ?>
 
+
 <div class="container center-align stars">
   <p class="stars">Avis</p>
   <?php foreach($stars as $_star): ?>
@@ -83,7 +84,6 @@ echo '</pre>';
   </div>
   <?php endforeach ?>
 </div>
-
 
 
 <?php

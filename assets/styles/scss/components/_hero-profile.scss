@@ -1,6 +1,5 @@
 div.informations {
   background: #00B7DB;
-  margin-top: 5px;
   padding: 20px 0;
   .container.informations {
     .row {
@@ -86,41 +85,6 @@ div.informations {
         background: #FED42D;
         transform: skew(-25deg);
         padding: 0 30px;
-      }
-    }
-  }
-}
-
-.container.center-align.stars {
-  p.stars {
-    font-family: 'bangers';
-    font-size: 45px;
-    margin: 0 10px;
-  }
-  div.col.s10.offset-s1.card {
-    font-family: 'lato', sans-serif;
-    .row {
-      .col.s2.profile-picture {
-        margin: 5px;
-        .photo_container {
-          overflow: hidden;
-          background: #FBFBFB;
-          width: 95px;
-          height: 95px;
-          border-radius: 100%;
-          img {
-            object-fit: cover;
-            width: 95px;
-            height: 95px;
-          }
-        }
-      }
-      .col.s3.note {
-        p.name {
-          font-family: 'bangers';
-          font-size: 25px;
-          margin: 10px;
-        }
       }
     }
   }
