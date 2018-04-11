@@ -7,18 +7,21 @@ elem.forEach((e) =>{
 })
 
 
-var elem = document.querySelector('.chips')
-var instance = M.Chips.init(elem, {
-    autocompleteOptions: {
-        data: {
-            'Apple': null,
-            'Microsoft': null,
-            'Google': null
-        },
-        limit: Infinity,
-        minLength: 1
-    }
-})
+// carousel 
+var elem = document.querySelector('.carousel');
+var instance = M.Carousel.init(elem, {
+
+indicators:true
+});
+
+// Google autocomplete
+var input = document.querySelector('.autocompleted');
+var options = {
+    componentRestrictions: { country: 'fr' }
+};
+
+autocomplete = new google.maps.places.Autocomplete(input, options)
+console.log(input)
 
 
 const slider = document.querySelector('.carousel');

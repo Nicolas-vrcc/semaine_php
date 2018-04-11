@@ -1,10 +1,27 @@
 <?php
 require_once 'views/includes/db.php';
 
-if (isset($_POST['email']) && isset($_POST['password'])) {
+if (isset($_POST['email']) && isset($_POST['password']) && isset($_POST['location'])) {
 
-		$checkBoxValue = join(", ", $_POST['arrayValue']);
-		var_dump($checkBoxValue);
+
+    $checkBoxValue = join(", ", $_POST['arrayValue']);
+
+    // converts the location into proper google api request
+    $formatedLocation = $name = str_replace(' ', '+', $_POST['location']);
+    $url = "https://maps.googleapis.com/maps/api/geocode/json?address=" . $formatedLocation . "&key=AIzaSyDNj6Ao4vyLXmFpltuu8EnyYKYbF1HNXCM";
+
+    // gets the lat and long coordinates of the user
+    $curlSession = curl_init();
+    curl_setopt($curlSession, CURLOPT_URL, $url);
+    curl_setopt($curlSession, CURLOPT_BINARYTRANSFER, true);
+    curl_setopt($curlSession, CURLOPT_RETURNTRANSFER, true);
+
+    $data = json_decode(curl_exec($curlSession));
+
+    if ($data) {
+        $latitude = $data->results[0]->geometry->location->lat;
+        $longitude = $data->results[0]->geometry->location->lng;
+
 
     // check if the email is already used for another account
     $req = $pdo->prepare('SELECT ID FROM users WHERE email = :email');
@@ -18,13 +35,15 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
 
         // save user to database
         $password = password_hash($_POST['password'], PASSWORD_BCRYPT);
-        $req2 = $pdo->prepare('INSERT INTO users(email,password,first_name,location,skills) VALUES (:email, :password, :first_name, :location, :skills)');
+        $req2 = $pdo->prepare('INSERT INTO users(email, password, first_name, location, skills, latitude, longitude) VALUES (:email, :password, :first_name, :location, :skills, :latitude, :longitude)');
         $req2->execute([
             'email' => $_POST['email'],
             'password' => $password,
             'first_name' => $_POST['first_name'],
-						'location' => $_POST['location'],
-						'skills' => $checkBoxValue
+            'location' => $_POST['location'],
+            'skills' => $checkBoxValue,
+            'latitude' => $latitude,
+            'longitude' => $longitude
         ]);
         $req2->closeCursor();
 
@@ -35,6 +54,9 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
     } else {
         $error = 'Erreur d\'inscription, veuillez réesayer';
     }
+}else{
+    $error = 'Localisation Incorrecte, réésayez';
+}
 }
 require_once 'views/includes/header.php'
 ?>
@@ -44,38 +66,17 @@ require_once 'views/includes/header.php'
             <!-- Location  -->
             <div class="row">
                 <div class="input-field col s12">
-                    <select name="location">
-                        <option value="" disabled selected>Choisissez votre quartier</option>
-                        <option value="1">Paris 1</option>
-                        <option value="2">Paris 2</option>
-                        <option value="3">Paris 3</option>
-                        <option value="4">Paris 4</option>
-                        <option value="5">Paris 5</option>
-                        <option value="6">Paris 6</option>
-                        <option value="8">Paris 8</option>
-                        <option value="9">Paris 9</option>
-                        <option value="10">Paris 10</option>
-                        <option value="11">Paris 11</option>
-                        <option value="12">Paris 12</option>
-                        <option value="13">Paris 13</option>
-                        <option value="14">Paris 14</option>
-                        <option value="15">Paris 15</option>
-                        <option value="16">Paris 16</option>
-                        <option value="17">Paris 17</option>
-                        <option value="18">Paris 18</option>
-                        <option value="19">Paris 19</option>
-                        <option value="20">Paris 20</option>
-                    </select>
-                    <label>Ou habitez vous à Paris ?</label>
+                     <input id="last_name" type="text" name="location" class="validate autocompleted" placeholder="" required>
+                    <label for="last_name">Votre Localisation</label>
                 </div>
             </div>
             <!-- Skills -->
             <div class="row">
               <div class="input-field col s12">
 								<p>
-								<label for="test">
-                      <input id="test" type="checkbox" class="checkbox" value='informatique' name="arrayValue[]" />
-											<span>Informatique</span>
+								<label for="info">
+                                    <input id="info" type="checkbox" class="checkbox" value='informatique' name="arrayValue[]" />
+									<span>Informatique</span>
 								</label>
 								</p>
 								<p>
