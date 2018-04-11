@@ -307,7 +307,8 @@ div.informations {
       background: #DFDFDF;
       border-radius: 30px;
       margin: 10px 5px;
-      padding: 5px 15px; }
+      padding: 5px 15px;
+      text-transform: capitalize; }
     .container.center-align.choice-contact div.row div.col.s8.offset-s2 div.skills p.skill:hover {
       background: #00B7DB;
       color: #FFFFFF;
