@@ -32,7 +32,7 @@ $skills = explode(',', $skills);
         <p class="location">Paris <?= $_profil->location; ?>e</p>
         <p class="name"><?= $_profil->first_name; ?></p>
         <p class="age"><?= $_profil->age ?> ans</p>
-        <p class="description">Je donne des cours d’anglais pour les tous les niveaux. Né en angleterre je suis complètement billingue.</p>
+        <p class="description"><?= $_profil->bio ?></p>
       </div>
     </div>
   </div>
