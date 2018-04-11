@@ -92,6 +92,13 @@ $skills = explode(',', $skills);
     <div id="map" class="col s12 center-align"></div>
   </div>
 </div>
+
+<?php foreach($profil as $_profil): ?>
+  <script type="text/javascript">
+    let latitude = "<?= $_profil->latitude; ?>"
+    let longitude = "<?= $_profil->longitude; ?>"
+  </script>
+<?php endforeach ?>
  
  
  
