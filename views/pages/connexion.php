@@ -9,6 +9,7 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
     $req = $pdo->prepare('SELECT * FROM users WHERE email = :email');
     $req->execute(['email' => $_POST['email']]);
     $user = $req->fetch();
+    if($user){
     if (isset($user) && password_verify($_POST['password'], $user->password)) {
         $_SESSION['auth'] = $user;
         header('Location: dashboard/account');
@@ -16,6 +17,9 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
     } else {
         $error = 'Email ou mot de passe incorrect';
     }
+}else{
+    $error = 'Email ou mot de passe incorrect';
+}
 }
 require_once 'views/includes/header.php'
 ?>
@@ -33,6 +37,9 @@ require_once 'views/includes/header.php'
                     <label for="mdp">Mot de Passe</label>
                 </div>
             </div>
+            <?php if (isset($error)): ?>
+                <div class="card-panel red darken-1 white-text"><?=$error?>.</div>
+                <?php endif;?>
             <!-- Sumbit btn -->
             <div class="row">
                 <div class="input-field col s12">
@@ -40,9 +47,6 @@ require_once 'views/includes/header.php'
                     <i class="material-icons right">send</i>
                   </button>
                 </div>
-                <?php if(isset($error)): ?>
-                
-                <?php endif; ?>
             </div>
         </form>
     </div>

@@ -20,8 +20,8 @@ var options = {
     componentRestrictions: { country: 'fr' }
 };
 
-/* autocomplete = new google.maps.places.Autocomplete(input, options)
-console.log(input) */
+autocomplete = new google.maps.places.Autocomplete(input, options)
+
 
 
 const slider = document.querySelector('.carousel');

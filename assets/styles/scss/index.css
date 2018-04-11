@@ -19,15 +19,19 @@
     .connexion-panel .titleContainer .title {
       font-size: 2.5em;
       font-family: 'bangers'; }
+    .connexion-panel .titleContainer .description {
+      margin-top: 30px; }
   .connexion-panel .buttonContainer {
     margin-top: 350px;
     margin-bottom: 150px;
     text-align: center;
     transform: skewX(-25deg); }
     .connexion-panel .buttonContainer .btn-large {
-      line-height: 20px; }
+      line-height: 22px;
+      box-shadow: none; }
     .connexion-panel .buttonContainer a {
-      background: #FFD42C; }
+      background: #FFD42C;
+      color: #272727; }
     .connexion-panel .buttonContainer p {
       transform: skewX(25deg); }
   .connexion-panel .supercoinman {
@@ -69,7 +73,10 @@
     margin-bottom: 40px; }
 
 .exampleContainer {
-  background: #fbfbfb; }
+  background: #fbfbfb;
+  padding-top: 30px; }
+  .exampleContainer .row {
+    margin-bottom: 0; }
   .exampleContainer h2 {
     color: #272727;
     margin-top: 0;
@@ -103,14 +110,15 @@
         margin-top: 10px; }
   .exampleContainer .buttonContainer {
     margin: 0 auto;
-    margin-top: 30px;
-    margin-bottom: 30px;
+    margin-top: 50px;
+    margin-bottom: 50px;
     text-align: center;
     transform: skewX(-25deg); }
     .exampleContainer .buttonContainer .btn-large {
       line-height: 15px; }
     .exampleContainer .buttonContainer a {
-      background: #FFD42C; }
+      background: #FFD42C;
+      color: #272727; }
     .exampleContainer .buttonContainer p {
       transform: skewX(25deg); }
 
@@ -132,16 +140,18 @@
     text-align: center; }
     .bannerContainer .banner2 .row {
       margin-bottom: 0; }
-    .bannerContainer .banner2 .example {
-      display: inline-block;
-      background: #FFD42C;
-      color: #272727;
-      line-height: 40px;
-      padding: 0px 10px;
-      height: 40px;
-      border-radius: 30px;
-      margin-bottom: 50px;
-      font-size: 16px; }
+    .bannerContainer .banner2 .exampleContainer {
+      background: #F7F7F7; }
+      .bannerContainer .banner2 .exampleContainer .example {
+        display: inline-block;
+        background: #FFD42C;
+        color: #272727;
+        line-height: 40px;
+        padding: 0px 10px;
+        height: 40px;
+        border-radius: 30px;
+        margin-bottom: 50px;
+        font-size: 16px; }
 
 .bannerContainer.b2 {
   background: #F7F7F7; }
@@ -198,7 +208,7 @@
 
 .catContainer {
   background: #00B7DB;
-  margin-bottom: 2px; }
+  margin-bottom: 1px; }
   .catContainer h2 {
     text-align: center;
     margin-top: 0;
@@ -209,14 +219,15 @@
     margin-bottom: 0; }
   .catContainer .buttonContainer {
     margin: 0 auto;
-    margin-top: 30px;
-    margin-bottom: 30px;
+    margin-top: 40px;
+    margin-bottom: 50px;
     text-align: center;
     transform: skewX(-25deg); }
     .catContainer .buttonContainer .btn-large {
       line-height: 15px; }
     .catContainer .buttonContainer a {
-      background: #FFD42C; }
+      background: #FFD42C;
+      color: #272727; }
     .catContainer .buttonContainer p {
       transform: skewX(25deg); }
 
@@ -396,7 +407,7 @@ div.informations {
     color: #272727;
     font-family: lato; }
 
-label.checklabel {
+.checklabel {
   display: inline-block;
   padding: 5px 10px;
   margin: 5px;

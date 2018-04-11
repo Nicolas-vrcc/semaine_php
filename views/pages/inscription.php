@@ -3,7 +3,6 @@ require_once 'views/includes/db.php';
 
 if (isset($_POST['email']) && isset($_POST['password']) && isset($_POST['location'])) {
 
-
     $checkBoxValue = join(", ", $_POST['arrayValue']);
 
     // converts the location into proper google api request
@@ -33,15 +32,21 @@ if (isset($_POST['email']) && isset($_POST['password']) && isset($_POST['locatio
 
     if (filter_var($_POST['email'], FILTER_VALIDATE_EMAIL) && !empty($_POST['password']) && !$userAlreadyHere) {
 
-        // save user to database
+        // creates avatar 
+        $avatar_pic = 'https://api.adorable.io/avatars/200/' . $_POST['first_name'];
+
+        // hashes password
         $password = password_hash($_POST['password'], PASSWORD_BCRYPT);
-        $req2 = $pdo->prepare('INSERT INTO users(email, password, first_name, location, skills, latitude, longitude) VALUES (:email, :password, :first_name, :location, :skills, :latitude, :longitude)');
+
+        // save user to database
+        $req2 = $pdo->prepare('INSERT INTO users(email, password, first_name, location, skills, avatar_picture, latitude, longitude) VALUES (:email, :password, :first_name, :location, :skills, :avatar_picture, :latitude, :longitude)');
         $req2->execute([
             'email' => $_POST['email'],
             'password' => $password,
             'first_name' => $_POST['first_name'],
             'location' => $_POST['location'],
             'skills' => $checkBoxValue,
+            'avatar_picture' => $avatar_pic,
             'latitude' => $latitude,
             'longitude' => $longitude
         ]);
@@ -49,7 +54,7 @@ if (isset($_POST['email']) && isset($_POST['password']) && isset($_POST['locatio
 
         // send welcome email
         mail($_POST['email'], 'Bienvenue chez Super Voisin', "Bienvenue chez SpendWise, l'application qui vous permets de dépenser malin.");
-        header('Location: /connection');
+        header('Location: /connexion');
         exit;
     } else {
         $error = 'Erreur d\'inscription, veuillez réesayer';
@@ -72,25 +77,17 @@ require_once 'views/includes/header.php'
             </div>
             <!-- Skills -->
             <div class="row">
-              <div class="input-field col s12">
-								<p>
-								<label for="info">
-                                    <input id="info" type="checkbox" class="checkbox" value='informatique' name="arrayValue[]" />
-									<span>Informatique</span>
-								</label>
-								</p>
-								<p>
-								<label>
-                      <input id="test" type="checkbox" class="checkbox" value='babysitting' name="arrayValue[]" />
-											<span>Babysitting</span>
-								</label>
-								</p>
+              <div class="col s12 content_form">
+              <label>Vos Super Compétences</label>
+                <div class="col s12 content_form">
+                <?php require_once 'views/includes/checkbox.php' ?>
+                </div>
               </div>
             </div>
             <!-- First Name  -->
             <div class="row">
                 <div class="input-field col s12">
-                    <input id="first_name" type="text" name="first_name" class="validate">
+                    <input id="first_name" type="text" name="first_name" class="validate" required>
                     <label for="first_name">Prénom</label>
                 </div>
             </div>

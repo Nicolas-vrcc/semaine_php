@@ -2,8 +2,7 @@
 session_start();
 require_once 'views/includes/logged_only.php';
 require_once 'views/includes/db.php';
-$res = $pdo->query('SELECT first_name, ID, location, skills FROM users');
-$data = $res->fetchAll();
+
 // var_dump($data);
 var_dump($_SESSION['auth']);
 require_once 'views/includes/header_dashboard.php';
@@ -21,48 +20,25 @@ require_once 'views/includes/header_dashboard.php';
             </div>
         </div>
         <div class="row">
-            <div class="input-field col s4">
+            <div class="input-field col s6">
                 <select>
                     <option value="" disabled selected>Catégorie</option>
-                    <option value="1">Option 1</option>
-                    <option value="2">Option 2</option>
-                    <option value="3">Option 3</option>
+                    <?php require_once 'views/includes/displayCategory.php' ?>
                 </select>
             </div>
-            <div class="input-field col s4">
+            <div class="input-field col s6">
                 <select>
-                    <option value="" disabled selected>Lieux</option>
-                    <option value="1">Option 1</option>
-                    <option value="2">Option 2</option>
-                    <option value="3">Option 3</option>
-                </select>
-            </div>
-            <div class="input-field col s4">
-                <select>
-                    <option value="" disabled selected>Crédits</option>
-                    <option value="1">Option 1</option>
-                    <option value="2">Option 2</option>
-                    <option value="3">Option 3</option>
+                    <option value="" disabled selected>Distance</option>
+                    <option value="d1">Moins de 5Km</option>
+                    <option value="d2">Moins de 10Km</option>
+                    <option value="d3">Moins de 30Km</option>
+                    <option value="d3">Tout</option>
                 </select>
             </div>
         </div>
         <div class="row">
             <div class="col s12">
-            <?php foreach($data as $user): ?>
-            <div class="card-panel grey lighten-5">
-                <div class="row valign-wrapper">
-                <div class="col s2">
-                <img src="http://lorempicsum.com/simpsons/255/200/2" alt="user_picture" class="circle responsive-img">
-                </div>
-                <div class="col s1"></div>
-                <div class="col s9">
-                <p><?= $user->location ?></h4>
-                <h4><?= $user->first_name ?></h4>
-                 <a href='hero_profile?id=<?= $user->ID ?>' class="btn-floating btn-large waves-effect waves-light red float-right"><i class="material-icons">add</i></a>
-                </div>
-                </div>
-            </div>
-            <?php endforeach; ?>
+            <?php require_once 'views/includes/userList.php' ;?>
             </div>
         </div>
     </div>
