@@ -20,8 +20,8 @@ var options = {
     componentRestrictions: { country: 'fr' }
 };
 
-autocomplete = new google.maps.places.Autocomplete(input, options)
-console.log(input)
+/* autocomplete = new google.maps.places.Autocomplete(input, options)
+console.log(input) */
 
 
 const slider = document.querySelector('.carousel');
@@ -32,8 +32,7 @@ numVisible:1
 });
 
 //Map in hero profile
-console.log(latitude)
-console.log(longitude)
+console.log($coord)
 function initMap() {
     var map = new google.maps.Map(document.getElementById('map'), {
       center: {lat: 48.856614, lng: 2.352222},

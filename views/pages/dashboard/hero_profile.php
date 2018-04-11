@@ -93,12 +93,14 @@ $skills = explode(',', $skills);
   </div>
 </div>
 
-<?php foreach($profil as $_profil): ?>
-  <script type="text/javascript">
-    let latitude = "<?= $_profil->latitude; ?>"
-    let longitude = "<?= $_profil->longitude; ?>"
-  </script>
-<?php endforeach ?>
+<?php foreach($profil as $_profil){
+  $coord = array($_profil->latitude, $_profil->longitude);
+}
+
+?>
+<script type="text/javascript">
+  const coord = <?= json_encode($coord); ?>
+</script>
  
  
  
