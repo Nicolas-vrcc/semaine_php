@@ -23,7 +23,9 @@ if ($q === '') {
     $page = 'dashboard/profile';
 } else if ($q === 'dashboard/hero_profile') {
     $page = 'dashboard/hero_profile';
-}
+} else if ($q === 'dashboard/edit_profile') {
+    $page = 'dashboard/edit_profile';
+} 
  else {
     $page = '404';
 }
