@@ -41,7 +41,7 @@ require_once 'views/includes/header.php'
                   </button>
                 </div>
                 <?php if(isset($error)): ?>
-                
+                 <div class="card-panel red darken-1 white-text"><?=$error?></div>
                 <?php endif; ?>
             </div>
         </form>

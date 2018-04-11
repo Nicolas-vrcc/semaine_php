@@ -4,7 +4,7 @@ require_once 'views/includes/db.php';
 if (isset($_POST['email']) && isset($_POST['password'])) {
 
 		$checkBoxValue = join(", ", $_POST['arrayValue']);
-		var_dump($checkBoxValue);
+		// var_dump($checkBoxValue);
 
     // check if the email is already used for another account
     $req = $pdo->prepare('SELECT ID FROM users WHERE email = :email');
@@ -14,7 +14,7 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
     $userAlreadyHere = $req->fetch();
     $req->closeCursor();
 
-    if (filter_var($_POST['email'], FILTER_VALIDATE_EMAIL) && !empty($_POST['password']) && !$userAlreadyHere) {
+    if (filter_var($_POST['email'], FILTER_VALIDATE_EMAIL) && !empty($_POST['password']) && !$userAlreadyHere && $checkBoxValue) {
 
         // save user to database
         $password = password_hash($_POST['password'], PASSWORD_BCRYPT);
@@ -23,14 +23,14 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
             'email' => $_POST['email'],
             'password' => $password,
             'first_name' => $_POST['first_name'],
-						'location' => $_POST['location'],
-						'skills' => $checkBoxValue
+			'location' => $_POST['location'],
+			'skills' => $checkBoxValue
         ]);
         $req2->closeCursor();
 
         // send welcome email
-        mail($_POST['email'], 'Bienvenue chez Super Voisin', "Bienvenue chez SpendWise, l'application qui vous permets de dépenser malin.");
-        header('Location: /connection');
+        mail($_POST['email'], 'Bienvenue chez Super Voisin', "Bienvenue chez Super Voisin, l'application qui vous permets de dépenser malin.");
+        header('Location: /connexion');
         exit;
     } else {
         $error = 'Erreur d\'inscription, veuillez réesayer';
