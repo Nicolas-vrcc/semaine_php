@@ -50,6 +50,7 @@ div.informations {
     div.col.s8.offset-s2 {
         div.skills {
           span.skill {
+            font-weight: 500;
             background: #DFDFDF;
             border-radius: 30px;
             margin: 5px 5px;
@@ -63,29 +64,12 @@ div.informations {
             cursor: pointer;
           }
         }
-      div.price {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-        margin-top: 10px;
-        p.amount {
-          font-family: 'bangers';
-          font-size: 35px;
-          color: #00B7DB;
-          margin: 0;
-        }
-        img {
-          width: 35px;
-          height: 35px;
-        }
-      }
       a {
         button.btn.waves-effect.waves-light {
           background: #FED42D;
           transform: skew(-25deg);
           padding: 0 30px;
-          margin-bottom: 25px;
+          margin: 25px 0;
         }
       }
     }
