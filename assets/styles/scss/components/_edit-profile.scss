@@ -1,0 +1,48 @@
+.container.title_edit_profil {
+    h1.center.bangers {
+        font-size: 63px;
+    }
+}
+
+.container {
+    .row {
+        .photo_edit {
+          .photo_container_edit {
+            overflow: hidden;
+            background: #FBFBFB;
+            width: 250px;
+            height: 250px;
+            border-radius: 100%;
+            img {
+              object-fit: cover;
+              width: 250px;
+              height: 250px;
+            }
+          }
+        }
+    }
+    .row.form {
+        display: inline-block;
+
+        .content_form {
+            .sub_title {
+                font-size: 24px;
+            }
+        }
+
+        .input-field {
+            label {
+                font-family: lato;
+                font-size: 16px;
+            }
+
+            button.btn.btn_validate.waves-effect.waves-light {
+                background: #FED42D;
+                transform: skew(-25deg);
+                padding: 0 30px;
+                color: #272727;
+                font-family: lato;
+            }
+        }
+    }
+}
