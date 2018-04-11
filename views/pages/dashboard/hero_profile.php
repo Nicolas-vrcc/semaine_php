@@ -82,6 +82,15 @@ $skills = explode(',', $skills);
   </div>
   <?php endforeach ?>
 </div>
+
+<div class="container map">
+  <div class="row">
+    <p class="title center-align">Où se trouve votre héros :</p>
+  </div>
+
+  <div class="row">
+  </div>
+</div>
  
  
  

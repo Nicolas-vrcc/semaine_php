@@ -354,6 +354,10 @@ div.informations {
     font-size: 25px;
     margin: 10px; }
 
+.container.map .row p.title {
+  font-family: 'bangers';
+  font-size: 45px; }
+
 .float-right {
   float: right; }
 
