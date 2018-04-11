@@ -13,9 +13,6 @@ $comments = $pdo->prepare('SELECT users.first_name AS user_name, grades.stars AS
 $comments->execute(['id' => $_GET['id']]);
 $datas = $comments->fetchAll();
 
-echo '<pre>';
-var_dump($datas);
-echo '</pre>';
 //Get the skills string of the current user
 foreach($profil as $_profil){$skills = $_profil->skills;}
 //Convert string of skills into an array to display separately in the folowwing code
