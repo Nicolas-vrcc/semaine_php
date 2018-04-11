@@ -3,6 +3,7 @@ require_once 'views/includes/db.php';
 
 if (isset($_POST['email']) && isset($_POST['password']) && isset($_POST['location'])) {
 
+
     $checkBoxValue = join(", ", $_POST['arrayValue']);
 
     // converts the location into proper google api request
@@ -21,6 +22,7 @@ if (isset($_POST['email']) && isset($_POST['password']) && isset($_POST['locatio
         $latitude = $data->results[0]->geometry->location->lat;
         $longitude = $data->results[0]->geometry->location->lng;
 
+
     // check if the email is already used for another account
     $req = $pdo->prepare('SELECT ID FROM users WHERE email = :email');
     $req->execute(array(
@@ -29,7 +31,7 @@ if (isset($_POST['email']) && isset($_POST['password']) && isset($_POST['locatio
     $userAlreadyHere = $req->fetch();
     $req->closeCursor();
 
-    if (filter_var($_POST['email'], FILTER_VALIDATE_EMAIL) && !empty($_POST['password']) && !$userAlreadyHere && $checkBoxValue) {
+    if (filter_var($_POST['email'], FILTER_VALIDATE_EMAIL) && !empty($_POST['password']) && !$userAlreadyHere) {
 
         // save user to database
         $password = password_hash($_POST['password'], PASSWORD_BCRYPT);
@@ -46,8 +48,8 @@ if (isset($_POST['email']) && isset($_POST['password']) && isset($_POST['locatio
         $req2->closeCursor();
 
         // send welcome email
-        mail($_POST['email'], 'Bienvenue chez Super Voisin', "Bienvenue chez Super Voisin, l'application qui vous permets de dépenser malin.");
-        header('Location: /connexion');
+        mail($_POST['email'], 'Bienvenue chez Super Voisin', "Bienvenue chez SpendWise, l'application qui vous permets de dépenser malin.");
+        header('Location: /connection');
         exit;
     } else {
         $error = 'Erreur d\'inscription, veuillez réesayer';
