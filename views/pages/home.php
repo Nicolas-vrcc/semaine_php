@@ -49,7 +49,7 @@ require_once 'views/includes/header.php';
   <div class="container">
     <div class="row">
       <h2>Des exemples de <span>Super-Héros</span></h2>
-      <div class="col s12 m10 l5 profilContainer">
+      <div class="col s12 m10 offset-m1 l6 profilContainer">
         <div class="profilPicture"><img src="" alt="" ></div>
         <div class="l2 infoContainer ">
           <div class="location">Paris - 18</div>
@@ -59,9 +59,9 @@ require_once 'views/includes/header.php';
         </div>
       </div>
 
-      <div class="col l2"></div>
+      
 
-      <div class="col s12 m10 l5 profilContainer">
+      <div class="col s12 m10 offset-m1 l6 profilContainer">
         <div class="profilPicture">
           <img src="" alt="" >
         </div>

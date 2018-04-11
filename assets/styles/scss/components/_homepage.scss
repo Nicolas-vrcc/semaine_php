@@ -20,6 +20,9 @@ body {}
       font-size: 2.5em;
       font-family: 'bangers';
     }
+    .description {
+      margin-top: 30px;
+    }
   }
   .buttonContainer {
     margin-top: 350px;
@@ -27,10 +30,12 @@ body {}
     text-align: center;
     transform: skewX(-25deg);
     .btn-large {
-      line-height: 20px;
+      line-height: 22px;
+      box-shadow: none;
     }
     a {
       background: #FFD42C;
+      color: #272727;
     }
     p {
       transform: skewX(25deg);
@@ -87,6 +92,10 @@ body {}
 // example 
 .exampleContainer {
   background: #fbfbfb;
+  padding-top: 30px;
+  .row {
+    margin-bottom: 0;
+  }
   h2 {
     color: #272727;
     margin-top: 0;
@@ -127,8 +136,8 @@ body {}
   }
   .buttonContainer {
     margin: 0 auto;
-    margin-top: 30px;
-    margin-bottom: 30px;
+    margin-top: 50px;
+    margin-bottom: 50px;
     text-align: center;
     transform: skewX(-25deg);
     .btn-large {
@@ -136,6 +145,7 @@ body {}
     }
     a {
       background: #FFD42C;
+      color: #272727;
     }
     p {
       transform: skewX(25deg);
@@ -168,16 +178,19 @@ body {}
     .row {
       margin-bottom: 0;
     }
-    .example {
-      display: inline-block;
-      background: #FFD42C;
-      color: #272727;
-      line-height: 40px;
-      padding: 0px 10px;
-      height: 40px;
-      border-radius: 30px;
-      margin-bottom: 50px;
-      font-size: 16px;
+    .exampleContainer {
+      background: #F7F7F7;
+      .example {
+        display: inline-block;
+        background: #FFD42C;
+        color: #272727;
+        line-height: 40px;
+        padding: 0px 10px;
+        height: 40px;
+        border-radius: 30px;
+        margin-bottom: 50px;
+        font-size: 16px;
+      }
     }
   }
 }
@@ -234,8 +247,6 @@ body {}
     }
     .carousel-item {
       margin-top: 50px;
-
-      
     }
     .arrow {
       margin-top: 120px;
@@ -257,7 +268,7 @@ body {}
 
 .catContainer {
   background: #00B7DB;
-  margin-bottom: 2px;
+  margin-bottom: 1px;
   h2 {
     text-align: center;
     margin-top: 0;
@@ -270,8 +281,8 @@ body {}
   }
   .buttonContainer {
     margin: 0 auto;
-    margin-top: 30px;
-    margin-bottom: 30px;
+    margin-top: 40px;
+    margin-bottom: 50px;
     text-align: center;
     transform: skewX(-25deg);
     .btn-large {
@@ -279,6 +290,7 @@ body {}
     }
     a {
       background: #FFD42C;
+      color: #272727;
     }
     p {
       transform: skewX(25deg);
