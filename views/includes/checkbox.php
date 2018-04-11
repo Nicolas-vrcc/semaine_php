@@ -6,6 +6,6 @@
 
 ?>
 <?php foreach($powers as $_power): ?>
-    <input id="<?= $_power->value ?>" class="checkbox" type="checkbox" name="arrayValue[]" value ="<?= $_power->value ?>">
+    <input id="<?= $_power->value ?>" class="checkbox" type="checkbox" name="arrayValue[]" value ="<?= $_power->name ?>">
     <label for="<?= $_power->value ?>" class="checklabel" ><?= utf8_decode($_power->name) ?></label>
 <?php endforeach; ?>

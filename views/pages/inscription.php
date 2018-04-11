@@ -78,14 +78,16 @@ require_once 'views/includes/header.php'
             <!-- Skills -->
             <div class="row">
               <div class="col s12 content_form">
-              <label for=""></label>
-				<?php require_once 'views/includes/checkbox.php' ?>
+              <label>Vos Super Compétences</label>
+                <div class="col s12 content_form">
+                <?php require_once 'views/includes/checkbox.php' ?>
+                </div>
               </div>
             </div>
             <!-- First Name  -->
             <div class="row">
                 <div class="input-field col s12">
-                    <input id="first_name" type="text" name="first_name" class="validate">
+                    <input id="first_name" type="text" name="first_name" class="validate" required>
                     <label for="first_name">Prénom</label>
                 </div>
             </div>
