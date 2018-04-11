@@ -314,7 +314,8 @@ div.informations {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    align-items: center; }
+    align-items: center;
+    margin-top: 10px; }
     .container.center-align.choice-contact div.row div.col.s8.offset-s2 div.price p.amount {
       font-family: 'bangers';
       font-size: 35px;
@@ -354,9 +355,10 @@ div.informations {
 
 .container.map .row.title p.title {
   font-family: 'bangers';
-  font-size: 45px; }
+  font-size: 45px;
+  margin-bottom: 10px; }
 .container.map .row.map #map {
-  height: 100%; }
+  height: 500px; }
 
 .float-right {
   float: right; }
