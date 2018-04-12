@@ -11,7 +11,7 @@ echo '</pre>';
 
 if (isset($_GET['profilepicture1'])) {
 	$profile_picture = $_GET['profilepicture1'];
-	$request = $pdo->prepare('UPDATE users SET avatar_picture = :profile_picture WHERE ID = :id');
+	$request = $pdo->prepare('UPDATE users SET (avatar_picture = :profile_picture) WHERE (ID = :id)');
 	$request->execute([
 		'profile_picture' => $profile_picture,
 		'id' => $_SESSION['auth']->ID
