@@ -18,10 +18,8 @@ if (isset($_POST['Email'])) {
     $email_body = 'Voici le message de' . $first_name . ' ' . $last_name . ': ' . $message_content;
 
     $email_to = 'matthieu@matthieutoussaint.fr';
-    $headers = 'From:' . $email_from . ' \r\n';
-    $headers .= 'Reply-To:' . $email . ' \r\n';
 
-    mail($email_to, $email_subject, $email_body, $headers);
+    mail($email_to, $email_subject, $email_body);
 
     $successMessages[] = 'Votre message nous a bien été transmis ! 👌🏻  Nous y répondrons sous 48h.';
 
@@ -67,7 +65,7 @@ if (isset($_POST['Email'])) {
   </div>
   <div class="messages">
     <?php foreach ($successMessages as $message): ?>
-      <p class="success"><?=$message?> Revenir à la <a href="/">page d'accueil ?</a></p>
+      <div class="card-panel green darken-1 white-text"><?=$message?> Revenir à la <a href="/">page d'accueil ?</a></div>
     <?php endforeach?>
   </div>
 </div>
