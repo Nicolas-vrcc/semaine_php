@@ -1,6 +1,7 @@
 <?php
 session_start();
 require_once 'views/includes/db.php';
+require_once 'views/includes/uploader.php';
 require_once 'views/includes/header_dashboard.php';
 
 echo '<pre>';
@@ -8,34 +9,8 @@ var_dump($_SESSION);
 echo '</pre>';
 
 //To change the avatar
-/* if (isset($_FILES['avatar']) and !empty($_FILES['avatar']['name'])) {
-	$max_size = 3000000;
-	$extension_success = array('jpg', 'jpeg', 'png');
-	if ($_FILES['avatar']['size'] <= $max_size) {
-		$extension_upload = strtolower(substr(strrchr($_FILES['avatar']['name'], '.'), 1));
-		if (in_array($extension_upload, $extension_success)) {
-			// Name our image
-			$img_path = "assets/img/avatars/" . $_SESSION['auth']->ID . "." . $extension_upload;
-			// Put image from temporary name to our file
-			$result = move_uploaded_file($_FILES['avatar']['tmp_name'], $img_path);
-			if (isset($result)) {
-				// update the avatar_picture field
-				$req = $pdo->prepare('UPDATE users SET avatar_picture = :avatar_picture WHERE ID = :ID');
-				$req->execute([
-						'avatar_picture' => $img_path,
-						'ID' => $_SESSION['auth']->ID,
-				]);
-			} else {
-				$msg = "Erreur lors de l'exportation";
-			}
-		} else {
-			$msg = "Votre photo de profil n'est pas au format jpg, jpeg, ou png ! ";
-		}
-	} else {
-		$msg = "Votre photo de profil est trop lourde !";
-	}
-}
- */
+
+
 //Change profile informations
 if (isset($_POST['email']) && isset($_POST['location'])) {
 
@@ -61,7 +36,7 @@ if (isset($_POST['email']) && isset($_POST['location'])) {
 	// check if the email is already used for another account
 	$req = $pdo->prepare('SELECT ID FROM users WHERE email = :email');
 	$req->execute(array(
-			'email' => $_POST['email'],
+		'email' => $_POST['email'],
 	));
 	$userAlreadyHere = $req->fetch();
 	$req->closeCursor();
@@ -104,22 +79,25 @@ if (isset($_POST['email']) && isset($_POST['location'])) {
   	  </div>
 			<div class="row">
 				<div class="col s12">
-					<form class="col s10 center" action="#" method="POST">
+					<form class="col s10 center" action="#" method="POST" enctype="multipart/form-data">
 						<div class="file-field input-field">
 							<div class="btn">
-								 <span>SÉLECTIONNER</span>
+								<span>SÉLECTIONNER</span>
 								<input type="file" name='avatar'>
 							</div>
 							<div class="file-path-wrapper">
 								<input class="file-path validate" type="text">
 							</div>
 						</div>
-						<button class="btn waves-effect waves-light center" type="submit" name="action">Mettre à jour</button>
+						<button class="btn waves-effect waves-light center" type="submit" name="img_update">Mettre à jour</button>
 					</form>
 				</div>
 				<div class="col s12">
-					<?php if(isset($msg)): ?>
+					<?php if(isset($errmsg)): ?>
 						<div class="card-panel red darken-1 white-text"><?= $msg; ?></div>
+					<?php endif ?>
+					<?php if(isset($succmsg)): ?>
+						<div class="card-panel green darken-1 white-text"><?= $msg; ?></div>
 					<?php endif ?>
 				</div>
 			</div>
