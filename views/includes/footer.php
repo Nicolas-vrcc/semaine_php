@@ -21,13 +21,16 @@
       <p class="container">© 2018 Équipe 6 - HETIC</p>
     </div>
   </footer>
-   <!-- Compiled and minified JavaScript -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
-  <!-- Maps API -->
+
+<!-- Compiled and minified JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+<!-- Maps API -->
 <script id="googleApi" type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDNj6Ao4vyLXmFpltuu8EnyYKYbF1HNXCM&libraries=places&libraries=drawing&callback=initMap" async defer></script>
 <!-- Scroll reveal -->
 <script src="https://unpkg.com/scrollreveal/dist/scrollreveal.min.js"></script>
 <!-- Main JS -->
 <script src="/assets/js/main.js"></script>
+<!-- Maps API -->
+<script defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAMlTrWYLqu1qvbAN7q0S3lcWYpTlKXnQ4&libraries=places&libraries=drawing&callback=initMap">google.maps.event.addDomListener(window,'load', initMap);</script>
 </body>
 </html>

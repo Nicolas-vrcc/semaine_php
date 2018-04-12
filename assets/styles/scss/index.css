@@ -370,29 +370,36 @@ div.informations {
 .container.title_edit_profil h1.center.bangers {
   font-size: 63px; }
 
-.container .row .photo_edit .photo_container_edit {
+.container.profile-details .row.valign-wrapper .col.s4.photo_edit.center-align .button.center button {
+  background: #FFD42E;
+  margin-top: 30px; }
+.container.profile-details .row.valign-wrapper .col.s4.photo_edit.center-align .photo_container_edit.center-align {
   overflow: hidden;
   background: #FBFBFB;
   width: 250px;
   height: 250px;
   border-radius: 100%; }
-  .container .row .photo_edit .photo_container_edit img {
+  .container.profile-details .row.valign-wrapper .col.s4.photo_edit.center-align .photo_container_edit.center-align img {
     object-fit: cover;
     width: 250px;
     height: 250px; }
-.container .row.form {
-  display: inline-block; }
-  .container .row.form .content_form .sub_title {
-    font-size: 24px; }
-  .container .row.form .input-field label {
-    font-family: lato;
-    font-size: 16px; }
-  .container .row.form .input-field button.btn.btn_validate.waves-effect.waves-light {
-    background: #FED42D;
-    transform: skew(-25deg);
-    padding: 0 30px;
-    color: #272727;
-    font-family: lato; }
+.container.profile-details .row.valign-wrapper .col.s8.profile-informations h3 {
+  font-family: 'bangers';
+  margin-top: 5px;
+  margin-bottom: 20px; }
+.container.profile-details .row.valign-wrapper .col.s8.profile-informations .row {
+  margin-top: -20px;
+  margin-bottom: 5px;
+  font-size: 10px; }
+  .container.profile-details .row.valign-wrapper .col.s8.profile-informations .row .col.s12.select-powers {
+    margin-top: 30px;
+    font-size: 15px;
+    font-weight: 700;
+    color: #FFD42E; }
+  .container.profile-details .row.valign-wrapper .col.s8.profile-informations .row .col.s12.center button {
+    background: #00B7DB;
+    margin: 20px 0;
+    font-family: 'lato', sans-serif; }
 
 .checklabel {
   display: inline-block;
@@ -402,8 +409,8 @@ div.informations {
   color: #272727;
   background-color: #dfdfdf;
   cursor: pointer;
-  font-family: lato;
-  font-weight: bold; }
+  font-family: 'lato', sans-serif;
+  font-weight: 500; }
 
 input.checkbox:checked + label {
   background-color: #00B7DB;
