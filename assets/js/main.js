@@ -22,10 +22,9 @@ var options = {
     componentRestrictions: { country: 'fr' }
 };
 
-if(url.match('hero_profile') || url.match('inscription')){
-	autocomplete = new google.maps.places.Autocomplete(input, options)
-}
-
+/* if(url.match('edit_profile') || url.match('inscription')){
+	const autocomplete = new google.maps.places.Autocomplete(document.querySelectorAll('input#location'))
+} */
 
 const slider = document.querySelector('.carousel');
 const instanceSlider = M.Carousel.init(slider, {
@@ -46,7 +45,7 @@ if(url.match('hero_profile')){
 		//Generate the map
 		var map = new google.maps.Map(document.getElementById('map'), {
 			center: latlng,
-			zoom: 9
+			zoom: 11
 		});
 	
 		//Create the circle around number of kilometers that can drive the profile
@@ -62,8 +61,6 @@ if(url.match('hero_profile')){
 		});
 	}
 }
-
-
 
 //FILESTACK
 const fsClient = filestack.init('A9EkyH78NTrKHwJFFWKbWz');
