@@ -22,8 +22,8 @@ if (isset($_POST['subject']) && isset($_POST['content'])) {
     $data = $req->execute([
     'ID_hero' => $_SESSION['auth']->ID,
     'ID_helped' => $_GET['id'],
-    'status' => 'waiting',
-    ]);
+    'status' => 'waiting'
+    ]) or die ( print_r($req->errorInfo()) );
+    var_dump($req);
     var_dump($data);
-
 }

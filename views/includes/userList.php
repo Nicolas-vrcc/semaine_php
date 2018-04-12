@@ -1,29 +1,31 @@
 <?php
 require_once 'functions.php';
-  // case where the user performs only a simple query
-    if (isset($_GET['query'])) {
+// case where the user performs only a simple query
+if (isset($_GET['query'])) {
 
-        $querySearch = $pdo->prepare('SELECT first_name, ID, location, skills, latitude, longitude, bio, avatar_picture FROM users WHERE first_name LIKE :first_name OR skills LIKE :skills OR bio LIKE :bio');
-        $querySearch->bindValue(':first_name', '%' . $_GET['query'] . '%', PDO::PARAM_STR);
-        $querySearch->bindValue(':skills', '%' . $_GET['query'] . '%', PDO::PARAM_STR);
-        $querySearch->bindValue(':bio', '%' . $_GET['query'] . '%', PDO::PARAM_STR);
-        $querySearch->execute();
-        $data = $querySearch->fetchAll();
+    $querySearch = $pdo->prepare('SELECT first_name, ID, location, skills, latitude, longitude, bio, avatar_picture FROM users WHERE first_name LIKE :first_name OR skills LIKE :skills OR bio LIKE :bio');
+    $querySearch->bindValue(':first_name', '%' . $_GET['query'] . '%', PDO::PARAM_STR);
+    $querySearch->bindValue(':skills', '%' . $_GET['query'] . '%', PDO::PARAM_STR);
+    $querySearch->bindValue(':bio', '%' . $_GET['query'] . '%', PDO::PARAM_STR);
+    $querySearch->execute();
+    $data = $querySearch->fetchAll();
 
-    }else{
-  // case where the user doesn't perform any
-$res = $pdo->query('SELECT first_name, ID, location, skills, latitude, longitude, bio, avatar_picture FROM users');
-$data = $res->fetchAll();
+} else {
+    // case where the user doesn't perform any
+    $res = $pdo->query('SELECT first_name, ID, location, skills, latitude, longitude, bio, avatar_picture FROM users');
+    $data = $res->fetchAll();
 
 }
 
 // deletes the user from the displayed users list
 $data = unsetValue($data, 'ID', $_SESSION['auth']->ID);
 
+// reorders the array
+$data = array_values($data);
 
-for($i= 0; $i < count($data); $i++){
-  // gets the distance between two users
-  $data[$i]->distance = distance($_SESSION['auth']->latitude, $_SESSION['auth']->longitude, $data[$i]->latitude, $data[$i]->longitude);
+for ($i = 0; $i < count($data); $i++) {
+    // gets the distance between two users
+    $data[$i]->distance = distance($_SESSION['auth']->latitude, $_SESSION['auth']->longitude, $data[$i]->latitude, $data[$i]->longitude);
 }
 // sorts user list according to distance from user
 function cmp($a, $b)
@@ -63,6 +65,6 @@ $skillsArray = explode(",", $user->skills);
                 </div>
             </div>
 <?php endforeach;?>
-<?php if(empty($data)): ?>
+<?php if (empty($data)): ?>
 <div class="card-panel teal lighten-2">Aucun résultat pour cette recherche.</div>
-<?php endif ?>
+<?php endif?>
