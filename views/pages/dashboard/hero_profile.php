@@ -65,7 +65,7 @@ $coord = array($profil->latitude, $profil->longitude);
       <form action="#" method="post">
       <div class="row"></div>
         <div class="input-field col s6 l6">
-          <input placeholder="Subject" name='subject' id="subject" type="text" class="content">
+          <input placeholder="Subject" name='subject' id="subject" type="text" class="content" required>
           <label for="subject">Subject</label>
         </div>
       </div>

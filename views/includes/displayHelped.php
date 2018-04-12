@@ -2,8 +2,9 @@
 $req = $pdo->prepare('SELECT * FROM users INNER JOIN missions ON users.ID = missions.ID_hero WHERE ID_helped = ?');
 $req->execute([$_SESSION['auth']->ID]);
 $helperList = $req->fetchAll();
+
 ?>
-<?php if($heroList): ?>
+<?php if($helperList): ?>
 <?php foreach($helperList as $entry): ?>
             <div class="col s12 m10 offset-m1 l6 profilContainer">
                 <div class="profilPicture">
