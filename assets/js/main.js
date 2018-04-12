@@ -1,5 +1,10 @@
+
 // scroll reveal
 window.sr = ScrollReveal()
+
+// pop-up mail
+var modal = document.querySelector('.modal');
+var instanceModal = M.Modal.init(modal, options);
 
 sr.reveal(document.querySelectorAll('.scrollAppear'))
 // creates select
@@ -63,7 +68,3 @@ function initMap() {
 // MODALS
 var elem = document.querySelectorAll('.modal');
 var instance = M.Modal.init(elem);
-
-// pop-up mail
-var modal = document.querySelector('.modal');
-var instanceModal = M.Modal.init(modal, options);
