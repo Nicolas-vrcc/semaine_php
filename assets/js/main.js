@@ -1,7 +1,6 @@
 // MODALS
 var modals = document.querySelectorAll('.modal');
 modals.forEach((e) => {
-	console.log(e)
 	M.Modal.init(e);
 })
 // scroll reveal
@@ -9,9 +8,10 @@ window.sr = ScrollReveal()
 
 // pop-up mail
 var modal = document.querySelector('.modal');
-var instanceModal = M.Modal.init(modal, options);
+var instanceModal = M.Modal.init(modal);
 
 sr.reveal(document.querySelectorAll('.scrollAppear'))
+
 // creates select
 var elem = document.querySelectorAll('select')
 var instance = M.FormSelect.init(elem)
@@ -30,14 +30,13 @@ var instance = M.Carousel.init(elem, {
 indicators:true
 });
 
-// Google autocomplete
+/* // Google autocomplete
+if(url.match('edit_profile') || url.match('inscription')){
 var input = document.querySelector('.autocompleted');
 var options = {
     componentRestrictions: { country: 'fr' }
 };
-
-/* if(url.match('edit_profile') || url.match('inscription')){
-	const autocomplete = new google.maps.places.Autocomplete(document.querySelectorAll('input#location'))
+	const autocomplete = new google.maps.places.Autocomplete(input, options)
 } */
 
 const slider = document.querySelector('.carousel');
@@ -77,18 +76,20 @@ if(url.match('hero_profile')){
 }
 
 //FILESTACK
-const fsClient = filestack.init('A9EkyH78NTrKHwJFFWKbWz');
-function openPicker() {
-	fsClient.pick({
-		fromSources:["local_file_system","facebook","instagram"],
-		transformations:{
-		crop:true},
-		accept:["image/*"],
-		maxSize:3000000,
-		maxFiles:1,
-		lang:"fr"
-	}).then(function(response) {
-		const url = response.filesUploaded[0].url
-		window.location.href = "/dashboard/edit_profile?profilepicture1=" + url
-	});
+if(url.match('edit_profile')){
+	const fsClient = filestack.init('A9EkyH78NTrKHwJFFWKbWz');
+	function openPicker() {
+		fsClient.pick({
+			fromSources:["local_file_system","facebook","instagram"],
+			transformations:{
+			crop:true},
+			accept:["image/*"],
+			maxSize:3000000,
+			maxFiles:1,
+			lang:"fr"
+		}).then(function(response) {
+			const url = response.filesUploaded[0].url
+			window.location.href = "/dashboard/edit_profile?profilepicture1=" + url
+		});
+	}
 }
