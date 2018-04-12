@@ -1,7 +1,6 @@
 <?php
 session_start();
 require_once 'views/includes/db.php';
-require_once 'views/includes/uploader.php';
 require_once 'views/includes/header_dashboard.php';
 
 echo '<pre>';
@@ -9,6 +8,18 @@ var_dump($_SESSION);
 echo '</pre>';
 
 //To change the avatar
+
+if (isset($_GET['profilepicture1'])) {
+	$profile_picture = $_GET['profilepicture1'];
+	$request = $pdo->prepare('UPDATE users SET avatar_picture = :profile_picture WHERE ID = :id');
+	$request->execute([
+		'profile_picture' => $profile_picture,
+		'id' => $_SESSION['auth']->ID
+	]);
+	$_SESSION['auth']->avatar_picture = $profile_picture;
+}else {
+	$profile_picture = $_SESSION['auth']->avatar_picture;
+}
 
 
 //Change profile informations
@@ -73,25 +84,15 @@ if (isset($_POST['email']) && isset($_POST['location'])) {
 
 <div class="container profile-details">
   <div class="row valign-wrapper">
-  	<div class="col s4 photo_edit">
-  	  <div class="photo_container_edit valign-wrapper">
-				<img class="responsive-img" src="<?= $_SESSION['auth']->avatar_picture; ?>" alt="profile picture">
+  	<div class="col s4 photo_edit center-align">
+  	  <div class="photo_container_edit center-align">
+				<img class="responsive-img" src="<?= $profile_picture ?>" alt="profile picture">
   	  </div>
+			<div class="button center">
+				<button class="btn waves-effect waves-light center" type="submit" name="action" onclick="openPicker()">Sélectionner</button>
+			</div>
+
 			<div class="row">
-				<div class="col s12">
-					<form class="col s10 center" action="#" method="POST" enctype="multipart/form-data">
-						<div class="file-field input-field">
-							<div class="btn">
-								<span>SÉLECTIONNER</span>
-								<input type="file" name='avatar'>
-							</div>
-							<div class="file-path-wrapper">
-								<input class="file-path validate" type="text">
-							</div>
-						</div>
-						<button class="btn waves-effect waves-light center" type="submit" name="img_update">Mettre à jour</button>
-					</form>
-				</div>
 				<div class="col s12">
 					<?php if(isset($errmsg)): ?>
 						<div class="card-panel red darken-1 white-text"><?= $msg; ?></div>

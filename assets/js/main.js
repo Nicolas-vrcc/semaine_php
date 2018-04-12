@@ -20,7 +20,7 @@ var options = {
     componentRestrictions: { country: 'fr' }
 };
 
-autocomplete = new google.maps.places.Autocomplete(input, options)
+/* autocomplete = new google.maps.places.Autocomplete(input, options) */
 
 const slider = document.querySelector('.carousel');
 const instanceSlider = M.Carousel.init(slider, {
@@ -29,7 +29,7 @@ indicators:true,
 numVisible:1
 });
 
-
+/* 
 //Map in hero profile
 function initMap() {
 	//Set latitude and longitude from hero_profile datas
@@ -52,6 +52,24 @@ function initMap() {
 		fillOpacity: 0.35,
 		map: map,
 		center: latlng,
-		radius: 30*1000 //convert kilometers to meters as required by Google
+		radius: 5*1000 //convert kilometers to meters as required by Google
+	});
+} */
+
+
+//FILESTACK
+const fsClient = filestack.init('A9EkyH78NTrKHwJFFWKbWz');
+function openPicker() {
+	fsClient.pick({
+		fromSources:["local_file_system","facebook","instagram","dropbox"],
+		transformations:{
+		crop:true},
+		accept:["image/*"],
+		maxSize:3000000,
+		maxFiles:1,
+		lang:"fr"
+	}).then(function(response) {
+		const url = response.filesUploaded[0].url
+		window.location.href = "/dashboard/edit_profile?profilepicture1=" + url
 	});
 }
