@@ -27,7 +27,7 @@ $skills = explode(',', $_SESSION['auth']->skills);
                     <p class="skill"><?= utf8_decode($_skill) ?></p>
                 <?php endforeach ?>
           </div>
-            <p class="description">Description: <?= utf8_decode($_SESSION['auth']->bio);?></p>
+            <p class="description">Description: <?= $_SESSION['auth']->bio;?></p>
             <div class="price">
                 <p class="money_element">Mon solde est de</p>
                 <p class="amount"><?= $_SESSION['auth']->token ?></p>
@@ -54,32 +54,7 @@ $skills = explode(',', $_SESSION['auth']->skills);
     <div class="container">
         <div class="row">
             <h2>Ils sont mes super-héros</h2>
-            <div class="col s12 m10 offset-m1 l6 profilContainer">
-                <div class="profilPicture">
-                    <img src="" alt="" >
-                </div>
-                <div class="infoContainer">
-                    <p class="locationHero">Paris - 18</p>
-                    <p class="nameHero">Claude Durluk</p>
-                </div>
-                <div class="button">
-                    <button data-target="modal2" class="btn modal-trigger buttonValidate"><p>Mission accomplie</p></button>
-                    <button data-target="modal1" class="btn modal-trigger buttonAbandon"><p>Abandon de la mission</p></button>
-                </div>
-            </div>
-            <div class="col s12 m10 offset-m1 l6 profilContainer">
-                <div class="profilPicture">
-                    <img src="" alt="" >
-                </div>
-                <div class="infoContainer">
-                    <p class="locationHero">Paris - 16</p>
-                    <p class="nameHero">Juliette Pititou</p>
-                </div>
-                <div class="button">
-                <button data-target="modal2" class="btn modal-trigger buttonValidate"><p>Mission accomplie</p></button>
-                    <button data-target="modal1" class="btn modal-trigger buttonAbandon"><p>Abandon de la mission</p></button>
-                </div>
-            </div>
+        <?php require_once 'views/includes/displayHelped.php' ?>
         </div>
     </div>
 </div>

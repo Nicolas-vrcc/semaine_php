@@ -16,5 +16,14 @@ if (isset($_POST['subject']) && isset($_POST['content'])) {
     $content = $_POST['content'];
 
     mail($to, $subject, $content, $header);
-    
+
+    // creates mission
+    $req = $pdo->prepare('INSERT INTO missions VALUES (:ID_hero, :ID_helped, :status)');
+    $data = $req->execute([
+    'ID_hero' => $_SESSION['auth']->ID,
+    'ID_helped' => $_GET['id'],
+    'status' => 'waiting',
+    ]);
+    var_dump($data);
+
 }
