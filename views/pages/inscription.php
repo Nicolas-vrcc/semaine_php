@@ -38,8 +38,10 @@ if (isset($_POST['email']) && isset($_POST['password']) && isset($_POST['locatio
         // hashes password
         $password = password_hash($_POST['password'], PASSWORD_BCRYPT);
 
+        // bio generated
+        $bio = 'Salut, moi c\'est super-' . $_POST['first_name'] . ' je suis à ta disposition pour des super-services ;)';
         // save user to database
-        $req2 = $pdo->prepare('INSERT INTO users(email, password, first_name, location, skills, avatar_picture, latitude, longitude) VALUES (:email, :password, :first_name, :location, :skills, :avatar_picture, :latitude, :longitude)');
+        $req2 = $pdo->prepare('INSERT INTO users(email, password, first_name, location, skills, avatar_picture, latitude, longitude, token, bio) VALUES (:email, :password, :first_name, :location, :skills, :avatar_picture, :latitude, :longitude, :token, :bio)');
         $req2->execute([
             'email' => $_POST['email'],
             'password' => $password,
@@ -47,8 +49,10 @@ if (isset($_POST['email']) && isset($_POST['password']) && isset($_POST['locatio
             'location' => $_POST['location'],
             'skills' => $checkBoxValue,
             'avatar_picture' => $avatar_pic,
+            'bio' => $bio,
             'latitude' => $latitude,
-            'longitude' => $longitude
+            'longitude' => $longitude,
+            'token' => 30
         ]);
         $req2->closeCursor();
 

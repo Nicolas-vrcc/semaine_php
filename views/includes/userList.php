@@ -1,7 +1,21 @@
 <?php
 require_once 'functions.php';
+  // case where the user performs only a simple query
+    if (isset($_GET['query'])) {
+
+        $querySearch = $pdo->prepare('SELECT first_name, ID, location, skills, latitude, longitude, bio, avatar_picture FROM users WHERE first_name LIKE :first_name OR skills LIKE :skills OR bio LIKE :bio');
+        $querySearch->bindValue(':first_name', '%' . $_GET['query'] . '%', PDO::PARAM_STR);
+        $querySearch->bindValue(':skills', '%' . $_GET['query'] . '%', PDO::PARAM_STR);
+        $querySearch->bindValue(':bio', '%' . $_GET['query'] . '%', PDO::PARAM_STR);
+        $querySearch->execute();
+        $data = $querySearch->fetchAll();
+
+    }else{
+  // case where the user doesn't perform any
 $res = $pdo->query('SELECT first_name, ID, location, skills, latitude, longitude, bio, avatar_picture FROM users');
 $data = $res->fetchAll();
+
+}
 
 // deletes the user from the displayed users list
 $data = unsetValue($data, 'ID', $_SESSION['auth']->ID);
@@ -31,7 +45,7 @@ usort($data, "cmp");
 // create an array of skills
 $skillsArray = explode(",", $user->skills);
 ?>
-            <div class="card-panel grey lighten-5">
+            <div class="card-panel grey lighten-5 scrollAppear">
                 <div class="row valign-wrapper">
                 <div class="col s2">
                 <img src=<?=$user->avatar_picture?> alt="user_picture" class="circle responsive-img">
@@ -44,8 +58,11 @@ $skillsArray = explode(",", $user->skills);
                 <div class="checklabel"><?=utf8_decode($skill)?></div>
                 <?php endforeach;?>
                 <p><?=$user->bio?></p>
-                 <a href='hero_profile?id=<?=$user->ID?>' class="btn-floating btn-large waves-effect waves-light red float-right"><i class="material-icons">add</i></a>
+                 <a href='hero_profile?id=<?=$user->ID?>' class="btn-floating btn-large waves-effect waves-light red float-right"><i class="material-icons">mail</i></a>
                 </div>
                 </div>
             </div>
-            <?php endforeach;?>
+<?php endforeach;?>
+<?php if(empty($data)): ?>
+<div class="card-panel teal lighten-2">Aucun résultat pour cette recherche.</div>
+<?php endif ?>

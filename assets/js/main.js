@@ -1,3 +1,7 @@
+// scroll reveal
+window.sr = ScrollReveal()
+
+sr.reveal(document.querySelectorAll('.scrollAppear'))
 // creates select
 var elem = document.querySelectorAll('select')
 var instance = M.FormSelect.init(elem)
@@ -55,3 +59,11 @@ function initMap() {
 		radius: 30*1000 //convert kilometers to meters as required by Google
 	});
 }
+
+// MODALS
+var elem = document.querySelectorAll('.modal');
+var instance = M.Modal.init(elem);
+
+// pop-up mail
+var modal = document.querySelector('.modal');
+var instanceModal = M.Modal.init(modal, options);
