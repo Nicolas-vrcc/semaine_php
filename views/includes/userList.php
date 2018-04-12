@@ -39,6 +39,10 @@ if(isset($_GET['selectCategory']) && isset($_GET['query'])){
 $data = unsetValue($data, 'ID', $_SESSION['auth']->ID);
 
 
+// reorders the array
+$data = array_values($data);
+
+
 for($i= 0; $i < count($data); $i++){
   // gets the distance between two users
   $data[$i]->distance = distance($_SESSION['auth']->latitude, $_SESSION['auth']->longitude, $data[$i]->latitude, $data[$i]->longitude);

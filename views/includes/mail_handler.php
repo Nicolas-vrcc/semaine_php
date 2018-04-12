@@ -18,12 +18,11 @@ if (isset($_POST['subject']) && isset($_POST['content'])) {
     mail($to, $subject, $content, $header);
 
     // creates mission
-    $req = $pdo->prepare('INSERT INTO missions VALUES (:ID_hero, :ID_helped, :status)');
+    $req = $pdo->prepare('INSERT INTO missions(ID_hero, ID_helped, status) VALUES (:ID_hero, :ID_helped, :status)');
     $data = $req->execute([
     'ID_hero' => $_SESSION['auth']->ID,
     'ID_helped' => $_GET['id'],
     'status' => 'waiting'
-    ]) or die ( print_r($req->errorInfo()) );
-    var_dump($req);
-    var_dump($data);
+    ]);
+    header('Location: /dashboard/success');
 }
