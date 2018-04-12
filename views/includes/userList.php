@@ -9,13 +9,31 @@ require_once 'functions.php';
         $querySearch->bindValue(':bio', '%' . $_GET['query'] . '%', PDO::PARAM_STR);
         $querySearch->execute();
         $data = $querySearch->fetchAll();
-
-    }else{
-  // case where the user doesn't perform any
+ 
+    }
+    else{
+// case where the user doesn't perform any
 $res = $pdo->query('SELECT first_name, ID, location, skills, latitude, longitude, bio, avatar_picture FROM users');
 $data = $res->fetchAll();
 
 }
+
+if(isset($_GET['selectCategory']) && isset($_GET['query'])){
+        
+    $category = $_GET['selectCategory'];
+    // case where user select a category
+
+    $queryCategory = $pdo->prepare('SELECT first_name, ID, location, skills, latitude, longitude, bio, avatar_picture FROM users WHERE  skills LIKE :skills OR bio LIKE :bio');
+    $queryCategory->bindValue(':skills', '%' .$category . '%', PDO::PARAM_STR);
+    $queryCategory->bindValue(':bio', '%' . $category . '%', PDO::PARAM_STR);
+    $queryCategory->execute();
+    $data = $queryCategory->fetchAll();
+
+    $selectOption = $_GET['selectCategory'];
+   
+}
+
+
 
 // deletes the user from the displayed users list
 $data = unsetValue($data, 'ID', $_SESSION['auth']->ID);
@@ -25,6 +43,7 @@ for($i= 0; $i < count($data); $i++){
   // gets the distance between two users
   $data[$i]->distance = distance($_SESSION['auth']->latitude, $_SESSION['auth']->longitude, $data[$i]->latitude, $data[$i]->longitude);
 }
+
 // sorts user list according to distance from user
 function cmp($a, $b)
 {
@@ -36,9 +55,7 @@ function cmp($a, $b)
 
 usort($data, "cmp");
 
-// echo '<pre>';
-// var_dump($data);
-// echo '</pre>';
+
 ?>
 <?php foreach ($data as $user): ?>
     <?php
@@ -58,7 +75,7 @@ $skillsArray = explode(",", $user->skills);
                 <div class="checklabel"><?=utf8_decode($skill)?></div>
                 <?php endforeach;?>
                 <p><?=$user->bio?></p>
-                 <a href='hero_profile?id=<?=$user->ID?>' class="btn-floating btn-large waves-effect waves-light red float-right"><i class="material-icons">mail</i></a>
+                 <a href='hero_profile?id=<?=$user->ID?>' class="btn-floating btn-large waves-effect waves-light float-right"><i class="material-icons">arrow_forward</i></a>
                 </div>
                 </div>
             </div>
@@ -66,3 +83,6 @@ $skillsArray = explode(",", $user->skills);
 <?php if(empty($data)): ?>
 <div class="card-panel teal lighten-2">Aucun résultat pour cette recherche.</div>
 <?php endif ?>
+
+<?php
+

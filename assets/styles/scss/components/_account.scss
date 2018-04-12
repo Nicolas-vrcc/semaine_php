@@ -1,0 +1,72 @@
+.account{
+    width:100%;
+    height:300px;
+    padding-top:50px;
+    background:#00b7db;
+
+    button{
+        margin-bottom: 20px;
+    }
+
+    .bangers{
+        margin:0;
+        color:#fbfbfb;
+    }
+
+    form{
+        padding-left:30px;
+        padding-right:30px;
+        border-radius:5px;
+        background:#fbfbfb;
+        box-shadow: 0 2px 2px  rgba(201, 123, 123, 0.14);
+
+        .input-field.col.s12 {
+            margin:30px 0px 0px 5px;
+            padding:5px;
+          }
+            
+          .input-field.col.s6 {
+                margin:0px 0px 30px 0px;
+                padding:5px;
+            }
+        .input-field {
+            label {
+                color: #8A8787;
+            }
+
+            input[type=text]:focus + label {
+                color: #8A8787;
+            }
+ 
+            input[type=text]:focus {
+              border-bottom: 1px solid #8A8787;
+              box-shadow: 0 1px 0 0 #8A8787;
+            }
+
+            input[type=text].valid {
+              border-bottom: 1px solid #8A8787;
+              box-shadow: 0 1px 0 0 #8A8787;
+            }
+
+            input[type=text].invalid {
+              border-bottom: 1px solid #8A8787;
+              box-shadow: 0 1px 0 0 #8A8787;
+            }
+
+            .prefix {
+              color: #8A8787;
+            }
+
+            span{
+                color: #00b7db;
+            }
+
+        }
+    }
+}
+
+.card-panel{
+    a{
+        background:#00b7db;
+    }
+}
