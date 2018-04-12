@@ -540,8 +540,7 @@ HERO CONTAINER - START
       margin-left: 10px;
       width: 120px;
       height: 120px;
-      border-radius: 50%;
-      background: #00B7DB; }
+      border-radius: 100%; }
     .heroContainer .profilContainer .infoContainer {
       position: absolute;
       left: 35%;

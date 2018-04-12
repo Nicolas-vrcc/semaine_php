@@ -14,8 +14,16 @@ $heroList = $req->fetchAll();
                     <p class="locationHero"></p>
                     <p class="nameHero"><?= $entry->first_name ?></p>
                 </div>
-                <button data-target="modal1" class="btn modal-trigger buttonAbandonMission"><p>Abandon de la mission</p></button>
+                <button data-target="<?= $entry->ID ?>" class="btn modal-trigger buttonAbandonMission"><p>Abandon de la mission</p></button>
             </div>
+<div id="<?= $entry->ID ?>" class="modal modalAbandon">
+    <div class="modal-content">
+        <h3 class="sub_title_popup bangers">Abandonner la mission</h3>
+        <p class="content_popup">Voulez-vous réellement abandonner cette mission ?</p>
+        <button class="btn btn_validate_popup waves-effect waves-light buttonAction" type="#" name="action"><p class="buttonElement"><a href="/dashboard/abort?mission=<?= $entry->ID ?>">Oui</a></p></button>
+        <button class="modal-action modal-close waves-effect waves-green btn-flat" type="#" name="action">Annuler</button>
+    </div>
+</div>
 <?php endforeach ?>
 <?php else: ?>
 <div class="card-panel teal lighten-2">Aucun service en cours pour le moment.</div>

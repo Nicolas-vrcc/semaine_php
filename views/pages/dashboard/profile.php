@@ -59,36 +59,6 @@ $skills = explode(',', $_SESSION['auth']->skills);
     </div>
 </div>
 </div>
-<!-- HELP - END -->
-<!-- POP UP - START -->
-<!-- POP UP ABANDON - START -->
-<div id="modal1" class="modal modalAbandon">
-    <div class="modal-content">
-        <h3 class="sub_title_popup bangers">Abandonner la mission</h3>
-        <p class="content_popup">Voulez-vous réellement abandonner cette mission ?</p>
-        <button class="btn btn_validate_popup waves-effect waves-light buttonAction" type="#" name="action"><p class="buttonElement">Oui</p></button>
-        <button class="modal-action modal-close waves-effect waves-green btn-flat" type="#" name="action">Annuler</button>
-    </div>
-</div>
-<!-- POP UP ABANDON - END -->
-<!-- POP UP VALIDATE - START -->
-<div id="modal2" class="modal modalValidate">
-    <div class="modal-content">
-        <h3 class="sub_title_popup bangers">Mission accomplie !</h3>
-        <div class="content_popup">
-            <p>Votre super-héros a bien accompli son travail, il faut le récompenser en SuperCoins !</p>
-            <p><b>Choisissez le montant</b></p>
-            <div class="price row">
-                <input id="cost" type="number" class="cost col s5">
-                <img src="../../../../assets/img/supercoin.svg" alt="superCoins" class="cost col s3 l2">
-            </div>
-            <button class="btn btn_validate_popup waves-effect waves-light buttonAction" type="#" name="action"><p class="buttonElement">Valider</p></button>
-            <button class="modal-action modal-close waves-effect waves-green btn-flat" type="#" name="action">Annuler</button>
-        </div>    
-    </div>
-</div>
-<!-- POP UP VALIDATE - END -->
-
 <?php
 require_once 'views/includes/footer.php';
 ?>

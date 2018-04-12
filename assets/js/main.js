@@ -1,4 +1,9 @@
-
+// MODALS
+var modals = document.querySelectorAll('.modal');
+modals.forEach((e) => {
+	console.log(e)
+	M.Modal.init(e);
+})
 // scroll reveal
 window.sr = ScrollReveal()
 
@@ -64,7 +69,3 @@ function initMap() {
 		radius: 30*1000 //convert kilometers to meters as required by Google
 	});
 }
-
-// MODALS
-var elem = document.querySelectorAll('.modal');
-var instance = M.Modal.init(elem);
