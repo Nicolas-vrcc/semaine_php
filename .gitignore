@@ -67,6 +67,10 @@ gulpfile.js
 package-lock.json
 package.json
 keys.txt
+/vendor
+composer.json
+composer.lock
+composer.phar
 
 # VisualStudioCode #
 ####################
