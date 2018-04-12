@@ -1,6 +1,11 @@
 <?php
+session_start();
 require_once 'views/includes/db.php';
+require_once 'views/includes/mail_handler.php';
+require_once 'views/includes/functions.php';
+
 require_once 'views/includes/header_dashboard.php';
+
  
 //Get the profile of the current user
 $users = $pdo->prepare('SELECT ID,email,first_name,location,skills,avatar_picture,bio,latitude,longitude FROM users WHERE ID = :id');
@@ -31,7 +36,7 @@ $coord = array($profil->latitude, $profil->longitude);
         </div>
       </div>
       <div class="col s8">
-        <p class="location"><?= $profil->location; ?></p>
+        <p class="location">à <?= distance($_SESSION['auth']->latitude, $_SESSION['auth']->longitude, $profil->latitude, $profil->longitude); ?> Km</p>
         <p class="name"><?= $profil->first_name; ?></p>
         <p class="description"><?= $profil->bio ?></p>
       </div>
@@ -45,11 +50,35 @@ $coord = array($profil->latitude, $profil->longitude);
       <p class="text">Choisissez la catégorie pour laquelle vous avez besoin de ce super-héros avant de le contacter :</p>
       <div class="skills">
         <?php foreach($skills as $_skill): ?>
-          <span class="skill"><?= $_skill ?></span>
-        <?php endforeach ?>
+          <input id="<?=$_skill?>" class="checkbox" type="checkbox" name="skill[]" value="<?= $_skill?>">
+          <label for="<?=$_skill?>" class="checklabel"><?= $_skill?></label>
+        <?php endforeach ; ?>
       </div>
-      <a href="mailto:<?= $profil->email?>"><button class="btn waves-effect waves-light" type="submit" name="action">Contacter</button></a>
+        <button data-target="modal1" class="btn modal-trigger waves-effect waves-light" type="submit" name="getSkill">Contacter</button>
+      </div>
+  </div>
+</div>
+
+ <!-- Modal Structure -->
+ <div id="modal1" class="modal">
+    <div class="modal-content">
+      <form action="#" method="post">
+      <div class="row"></div>
+        <div class="input-field col s6 l6">
+          <input placeholder="Subject" name='subject' id="subject" type="text" class="content" required>
+          <label for="subject">Subject</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s6 l12">
+          <textarea id="content" name="content" type="text" class="materialize-textarea">Bonjour <?= $name?>, </textarea>
+          <label for="content">Content</label>
+        </div>
+      </div>
+    <div class="modal-footer">
+      <a class="modal-action modal-close waves-effect waves-green btn-flat"><button class='submit' type="submit">submit</button></a>
     </div>
+    </form>
   </div>
 </div>
  

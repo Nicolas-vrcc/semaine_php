@@ -1,3 +1,17 @@
+// MODALS
+var modals = document.querySelectorAll('.modal');
+modals.forEach((e) => {
+	console.log(e)
+	M.Modal.init(e);
+})
+// scroll reveal
+window.sr = ScrollReveal()
+
+// pop-up mail
+var modal = document.querySelector('.modal');
+var instanceModal = M.Modal.init(modal, options);
+
+sr.reveal(document.querySelectorAll('.scrollAppear'))
 // creates select
 var elem = document.querySelectorAll('select')
 var instance = M.FormSelect.init(elem)

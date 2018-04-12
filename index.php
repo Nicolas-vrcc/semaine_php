@@ -25,6 +25,14 @@ if ($q === '') {
     $page = 'dashboard/hero_profile';
 } else if ($q === 'dashboard/edit_profile') {
     $page = 'dashboard/edit_profile';
+} else if ($q === 'dashboard/success') {
+    $page = 'dashboard/success';
+} else if ($q === 'dashboard/abort') {
+    $page = 'dashboard/abort';
+}  else if ($q === 'dashboard/pay') {
+    $page = 'dashboard/pay';
+}  else if ($q === 'dashboard/error') {
+    $page = 'dashboard/error';
 } 
  else {
     $page = '404';

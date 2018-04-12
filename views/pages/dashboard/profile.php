@@ -2,73 +2,64 @@
 session_start();
 require_once 'views/includes/logged_only.php';
 require_once 'views/includes/db.php';
-var_dump($_SESSION['auth']);
-
-if (isset($_FILES['avatar']) and !empty($_FILES['avatar']['name'])) {
-    $max_size = 3000000;
-    $extension_success = array('jpg', 'jpeg', 'png');
-    if ($_FILES['avatar']['size'] <= $max_size) {
-        $extension_upload = strtolower(substr(strrchr($_FILES['avatar']['name'], '.'), 1));
-        if (in_array($extension_upload, $extension_success)) {
-            // Name our image
-            $img_path = "assets/img/avatars/" . $_SESSION['auth']->ID . "." . $extension_upload;
-            // Put image from temporary name to our file
-            $result = move_uploaded_file($_FILES['avatar']['tmp_name'], $img_path);
-            if ($result) {
-                // update the avatar_picture field
-                $req = $pdo->prepare('UPDATE users SET avatar_picture = :avatar_picture WHERE ID = :ID');
-
-                $req->execute([
-                    'avatar_picture' => $img_path,
-                    'ID' => $_SESSION['auth']->ID,
-                ]);
-
-            } else {
-                $msg = "Erreur lors de l'exportation";
-            }
-        } else {
-            $msg = "Votre photo de profil n'est pas au format jpg, jpeg, ou png ! ";
-        }
-    } else {
-        $msg = "Votre photo de profil est trop lourde !";
-    }
-}
-
-$req2 = $pdo->prepare('SELECT * FROM users WHERE ID = :ID');
-$data = $req2->execute([
-    'ID' => $_SESSION['auth']->ID
-]);
-$data = $req2->fetch();
-
 require_once 'views/includes/header_dashboard.php';
+require_once 'views/includes/update_auth.php';
 
+$skills = explode(',', $_SESSION['auth']->skills);
 ?>
-<div class="container">
+<!-- INTRODUCTION PROFILE - START -->
+<div class="my_profil">
+<div class="container my_profil">
     <div class="row">
-        <div class="col s4">
-        <img src="/<?= $data->avatar_picture ?>" alt="profil picture">
-        <form action="#" method="POST">
-    <div class="file-field input-field">
-      <div class="btn">
-        <span>File</span>
-        <input type="file" name='avatar'>
-      </div>
-      <div class="file-path-wrapper">
-        <input class="file-path validate" type="text">
-      </div>
+        <div class="col s7 m4 l4 my_profile_photo">
+            <div class="photo_container">
+                <img class="responsive-img" src="<?=$_SESSION['auth']->avatar_picture;?>" alt="profile picture">
+            </div>
+            <div class="buttonEdit">
+                <a class="waves-effect waves-light btn-large" href="edit_profile"><p>Modifier mon profil</p></a>
+            </div>
+        </div>
+        <div class="col s12 m7 offset-m1 l7 offset-l1 profilSummary">
+            <p class="location"><?= $_SESSION['auth']->location ?></p>
+            <p class="name"><?= $_SESSION['auth']->first_name;?></p>
+            <div class="skills">
+                <?php foreach($skills as $_skill): ?>
+                    <p class="skill"><?= utf8_decode($_skill) ?></p>
+                <?php endforeach ?>
+          </div>
+            <p class="description">Description: <?= $_SESSION['auth']->bio;?></p>
+            <div class="price">
+                <p class="money_element">Mon solde est de</p>
+                <p class="amount"><?= $_SESSION['auth']->token ?></p>
+                <img src="/assets/img/supercoin.svg" alt="Super Coin">
+            </div>
+        </div>
     </div>
-  </form>
+</div>
+</div>
+<!-- INTRODUCTION PROFILE - END -->
+<div class="profilElement">
+<!-- MISSION - START -->
+<div class="heroContainer">
+    <div class="container">
+        <div class="row">
+            <h2>Je suis leur super-héros</h2>
+            <?php require_once 'views/includes/displayHero.php'; ?>
+        </div>
     </div>
-    <div class="col s1">
+</div>
+<!-- MISSION - END -->
+<!-- HELP - START -->
+<div class="helpContainer">
+    <div class="container">
+        <div class="row">
+            <h2>Ils sont mes super-héros</h2>
+        <?php require_once 'views/includes/displayHelped.php' ?>
+        </div>
     </div>
-    <div class="col s7">
-        <p>Localiasation :<?= $data->location ?></p>
-        <p>Nom : <?= $data->first_name ?></p>
-        <p>Bio : <?= $data->bio ?>
-        <p>Compétences : <? $data->skills ?></p>
-    </div>
-    </div>
+</div>
 </div>
 <?php
 require_once 'views/includes/footer.php';
 ?>
+<!-- MY PROFILE - END -->
