@@ -71,6 +71,7 @@ keys.txt
 composer.json
 composer.lock
 composer.phar
+views/includes/uploader.php
 
 # VisualStudioCode #
 ####################
