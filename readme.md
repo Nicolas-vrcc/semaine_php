@@ -5,11 +5,13 @@
 
 ## Synopsis
 We want to connect people who need services (quickly or not) with individuals or professionals with super powers!
-
 ![alt text](https://preview.ibb.co/fckRGn/Capture_d_e_cran_2018_04_13_a_01_41_50.png)
 
+Super Voisins is based on a system of exchange of services against a virtual currency: the 'Super Coins'. The superheroes who offer their services do not do so not financial interest but only because they want to help their neighbors.
+Users can buy 'Super Coins', the money collected can cover the running costs of the site.
+
 ## Running
- - Go to [Super Voisin](http://)
+ - Go to [Super Voisin](http://nicolasvrillac) or if it's not the good webstime go to [Super Voisin](http://supervoisin.matthieutoussaint.fr)
  - Download the .zip, unzip it, and use servor generator like MamP. 
 
 ## Features:
