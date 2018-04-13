@@ -1,23 +1,3 @@
-//FILESTACK
-if (url.match('hero_profile')) {
-	const fsClient = filestack.init('A9EkyH78NTrKHwJFFWKbWz');
-	function openPicker() {
-		fsClient.pick({
-			fromSources: ["local_file_system", "facebook", "instagram"],
-			transformations: {
-				crop: true
-			},
-			accept: ["image/*"],
-			maxSize: 3000000,
-			maxFiles: 1,
-			lang: "fr"
-		}).then(function (response) {
-			const url = response.filesUploaded[0].url
-			window.location.href = "/dashboard/edit_profile?profilepicture1=" + url
-		});
-	}
-}
-
 //Set URL
 let url = document.location.href
 
