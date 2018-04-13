@@ -8,10 +8,10 @@
         <div class="col l4 offset-l2 s12">
           <h5 class="white-text">Liens utiles</h5>
           <ul>
-            <li><a class="grey-text text-lighten-3" href="#!">CGV</a></li>
+            <li><a class="grey-text text-lighten-3" href="/cgu">CGU</a></li>
             <li><a class="grey-text text-lighten-3" href="#!">F.A.Q.</a></li>
             <li><a class="grey-text text-lighten-3" href="/contact">Nous contacter</a></li>
-            <li><a class="grey-text text-lighten-3" href="#!">Recrutement</a></li>
+            <li><a class="grey-text text-lighten-3" href="/404">Recrutement</a></li>
           </ul>
         </div>
       </div>

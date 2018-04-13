@@ -765,3 +765,15 @@ POP UP - END
 
 .card-panel a {
   background: #00b7db; }
+
+.container.faq .faq_title_container {
+  text-align: center;
+  color: #00B7DB; }
+.container.faq .faq_content .faq_question {
+  font-family: lato;
+  font-weight: bold;
+  font-size: 24px;
+  margin-top: 50px; }
+.container.faq .faq_content .faq_responses {
+  font-family: lato;
+  font-size: 16px; }
