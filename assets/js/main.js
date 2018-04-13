@@ -1,21 +1,26 @@
+//Set URL
+let url = document.location.href
+
 // MODALS
 var modals = document.querySelectorAll('.modal');
 modals.forEach((e) => {
 	M.Modal.init(e);
 })
 // scroll reveal
-window.sr = ScrollReveal()
+if(url.match('user_list')){
+	window.sr = ScrollReveal()
+	sr.reveal(document.querySelectorAll('.scrollAppear'))
+
+}
 
 // pop-up mail
 var modal = document.querySelector('.modal');
 var instanceModal = M.Modal.init(modal);
 
-sr.reveal(document.querySelectorAll('.scrollAppear'))
 
 // creates select
 var elem = document.querySelectorAll('select')
 var instance = M.FormSelect.init(elem)
-let url = document.location.href
 
 elem.forEach((e) =>{
     console.log(e)
@@ -76,7 +81,7 @@ if(url.match('hero_profile')){
 }
 
 //FILESTACK
-if(url.match('edit_profile')){
+if(url.match('hero_profile')){
 	const fsClient = filestack.init('A9EkyH78NTrKHwJFFWKbWz');
 	function openPicker() {
 		fsClient.pick({
