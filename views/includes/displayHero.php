@@ -1,5 +1,5 @@
 <?php
-$req = $pdo->prepare('SELECT * FROM users INNER JOIN missions ON users.ID = missions.ID_helped WHERE ID_hero = ?');
+$req = $pdo->prepare('SELECT * FROM users INNER JOIN missions ON users.ID = missions.ID_hero WHERE ID_helped = ?');
 $req->execute([$_SESSION['auth']->ID]);
 $heroList = $req->fetchAll();
 

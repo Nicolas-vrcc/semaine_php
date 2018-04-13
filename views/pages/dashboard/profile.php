@@ -44,7 +44,7 @@ $skills = explode(',', $_SESSION['auth']->skills);
     <div class="container">
         <div class="row">
             <h2>Je suis leur super-héros</h2>
-            <?php require_once 'views/includes/displayHero.php'; ?>
+            <?php require_once 'views/includes/displayHelped.php'?>
         </div>
     </div>
 </div>
@@ -54,7 +54,7 @@ $skills = explode(',', $_SESSION['auth']->skills);
     <div class="container">
         <div class="row">
             <h2>Ils sont mes super-héros</h2>
-        <?php require_once 'views/includes/displayHelped.php' ?>
+            <?php require_once 'views/includes/displayHero.php'?>
         </div>
     </div>
 </div>
