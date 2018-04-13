@@ -23,3 +23,8 @@ Users can buy 'Super Coins', the money collected can cover the running costs of 
 ## Next features:
  - Make Super-voisin responsive
  - Create te possibility to the user to buy credits with Stripe
+
+ ##Thanks to:
+ - Bruno Simon, our web development teach for his patience and his listening
+ - Nans Thomas for his wise advices
+ - @mattmlz: Maxime Pontillo for having accompanied me on my sleepless nights
