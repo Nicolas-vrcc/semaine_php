@@ -9,7 +9,7 @@
           <h5 class="white-text">Liens utiles</h5>
           <ul>
             <li><a class="grey-text text-lighten-3" href="/cgu">CGU</a></li>
-            <li><a class="grey-text text-lighten-3" href="#!">F.A.Q.</a></li>
+            <li><a class="grey-text text-lighten-3" href="/faq">F.A.Q.</a></li>
             <li><a class="grey-text text-lighten-3" href="/contact">Nous contacter</a></li>
             <li><a class="grey-text text-lighten-3" href="/404">Recrutement</a></li>
           </ul>
