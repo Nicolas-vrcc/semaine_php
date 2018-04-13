@@ -11,7 +11,7 @@ Super Voisins is based on a system of exchange of services against a virtual cur
 Users can buy 'Super Coins', the money collected can cover the running costs of the site.
 
 ## Running
- - Go to [Super Voisin](http://nicolasvrillac) or if it's not the good webstime go to [Super Voisin](http://supervoisin.matthieutoussaint.fr)
+ - Go to [Super Voisin](http://nicolasvrillac.com) or if it's not the good webstime go to [Super Voisin](http://supervoisin.matthieutoussaint.fr)
  - Download the .zip, unzip it, and use servor generator like MamP. 
 
 ## Features:
