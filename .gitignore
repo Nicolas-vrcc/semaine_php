@@ -62,7 +62,6 @@ Temporary Items
 ###########
 /dist
 /node_modules
-views/includes/db.php
 gulpfile.js
 package-lock.json
 package.json
@@ -71,7 +70,6 @@ keys.txt
 composer.json
 composer.lock
 composer.phar
-views/includes/uploader.php
 
 # VisualStudioCode #
 ####################
