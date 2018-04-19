@@ -97,7 +97,8 @@
       margin-left: 10px;
       width: 120px;
       height: 120px;
-      border-radius: 50%; }
+      border-radius: 50%;
+      background: #00B7DB; }
     .exampleContainer .profilContainer .infoContainer {
       position: absolute;
       left: 45%;
@@ -369,36 +370,29 @@ div.informations {
 .container.title_edit_profil h1.center.bangers {
   font-size: 63px; }
 
-.container.profile-details .row.valign-wrapper .col.s4.photo_edit.center-align .button.center button {
-  background: #FFD42E;
-  margin-top: 30px; }
-.container.profile-details .row.valign-wrapper .col.s4.photo_edit.center-align .photo_container_edit.center-align {
+.container .row .photo_edit .photo_container_edit {
   overflow: hidden;
   background: #FBFBFB;
   width: 250px;
   height: 250px;
   border-radius: 100%; }
-  .container.profile-details .row.valign-wrapper .col.s4.photo_edit.center-align .photo_container_edit.center-align img {
+  .container .row .photo_edit .photo_container_edit img {
     object-fit: cover;
     width: 250px;
     height: 250px; }
-.container.profile-details .row.valign-wrapper .col.s8.profile-informations h3 {
-  font-family: 'bangers';
-  margin-top: 5px;
-  margin-bottom: 20px; }
-.container.profile-details .row.valign-wrapper .col.s8.profile-informations .row {
-  margin-top: -20px;
-  margin-bottom: 5px;
-  font-size: 10px; }
-  .container.profile-details .row.valign-wrapper .col.s8.profile-informations .row .col.s12.select-powers {
-    margin-top: 30px;
-    font-size: 15px;
-    font-weight: 700;
-    color: #FFD42E; }
-  .container.profile-details .row.valign-wrapper .col.s8.profile-informations .row .col.s12.center button {
-    background: #00B7DB;
-    margin: 20px 0;
-    font-family: 'lato', sans-serif; }
+.container .row.form {
+  display: inline-block; }
+  .container .row.form .content_form .sub_title {
+    font-size: 24px; }
+  .container .row.form .input-field label {
+    font-family: lato;
+    font-size: 16px; }
+  .container .row.form .input-field button.btn.btn_validate.waves-effect.waves-light {
+    background: #FED42D;
+    transform: skew(-25deg);
+    padding: 0 30px;
+    color: #272727;
+    font-family: lato; }
 
 .checklabel {
   display: inline-block;
@@ -408,8 +402,8 @@ div.informations {
   color: #272727;
   background-color: #dfdfdf;
   cursor: pointer;
-  font-family: 'lato', sans-serif;
-  font-weight: 500; }
+  font-family: lato;
+  font-weight: bold; }
 
 input.checkbox:checked + label {
   background-color: #00B7DB;
@@ -418,6 +412,310 @@ input.checkbox:checked + label {
 label.checklabel:hover {
   box-shadow: 0 0 3px rgba(39, 39, 39, 0.15); }
 
+/*
+INTRODUCTION PROFILE - START
+****************/
+div.my_profil {
+  background: #00B7DB;
+  margin-top: 0px;
+  padding: 30px 0; }
+  div.my_profil .container.my_profil .row .buttonEdit {
+    margin-top: 10px;
+    margin-left: 20px;
+    height: 40px;
+    transform: skewX(-25deg); }
+    div.my_profil .container.my_profil .row .buttonEdit .btn-large {
+      line-height: 15px;
+      padding: 0px 10px; }
+    div.my_profil .container.my_profil .row .buttonEdit a {
+      height: 40px;
+      font-size: 13px;
+      padding: 0;
+      background: #FFD42C;
+      color: #272727; }
+    div.my_profil .container.my_profil .row .buttonEdit p {
+      transform: skewX(25deg); }
+  div.my_profil .container.my_profil .row .my_profile_photo .photo_container {
+    overflow: hidden;
+    background: #FBFBFB;
+    width: 250px;
+    height: 250px;
+    border-radius: 100%; }
+    @media screen and (max-width: 990px) {
+      div.my_profil .container.my_profil .row .my_profile_photo .photo_container {
+        width: 200px;
+        height: 200px; } }
+    @media screen and (max-width: 600px) {
+      div.my_profil .container.my_profil .row .my_profile_photo .photo_container {
+        width: 250px;
+        height: 250px; } }
+    div.my_profil .container.my_profil .row .my_profile_photo .photo_container img {
+      object-fit: cover;
+      width: 250px;
+      height: 250px; }
+      @media screen and (max-width: 990px) {
+        div.my_profil .container.my_profil .row .my_profile_photo .photo_container img {
+          width: 200px;
+          height: 200px; } }
+      @media screen and (max-width: 600px) {
+        div.my_profil .container.my_profil .row .my_profile_photo .photo_container img {
+          width: 250px;
+          height: 250px; } }
+  div.my_profil .container.my_profil .row .profilSummary {
+    font-family: 'lato', sans-serif;
+    color: #FBFBFB; }
+    @media screen and (max-width: 600px) {
+      div.my_profil .container.my_profil .row .profilSummary {
+        margin-top: 25px; } }
+    div.my_profil .container.my_profil .row .profilSummary p.location {
+      font-size: 15px;
+      margin: 0; }
+    div.my_profil .container.my_profil .row .profilSummary p.name {
+      font-family: 'bangers';
+      font-size: 40px;
+      margin: -5px 0; }
+    div.my_profil .container.my_profil .row .profilSummary div.skills p.skill {
+      display: inline-block;
+      text-align: center;
+      background: #DFDFDF;
+      color: #272727;
+      border-radius: 30px;
+      margin: 10px 0px 0px 0px;
+      padding: 5px 16px;
+      font-weight: 700; }
+    div.my_profil .container.my_profil .row .profilSummary p.description {
+      font-size: 18px;
+      margin: 10px 0; }
+  div.my_profil .container.my_profil .row .price {
+    width: 100%;
+    display: flex;
+    margin: 0;
+    padding: 0; }
+    div.my_profil .container.my_profil .row .price .money_element {
+      font-size: 30px;
+      margin: 0px 10px 0px 0px;
+      padding: 0; }
+    div.my_profil .container.my_profil .row .price .amount {
+      font-size: 35px;
+      font-family: 'bangers';
+      margin: 0;
+      padding: 0; }
+    div.my_profil .container.my_profil .row .price img {
+      margin-top: 7px;
+      width: 40px;
+      height: 40px; }
+
+/*
+INTRODUCTION PROFILE - END
+****************/
+/*
+PROFIL ELEMENT - START
+****************/
+.profilElement {
+  background: #fbfbfb; }
+
+/*
+HERO CONTAINER - START
+****************/
+.heroContainer {
+  margin-bottom: 0px; }
+  .heroContainer h2 {
+    color: #272727;
+    margin-top: 0;
+    font-family: 'bangers';
+    font-size: 30px;
+    text-align: center;
+    padding-top: 30px; }
+  .heroContainer .profilContainer {
+    position: relative;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    height: 230px;
+    background: #F7F7F7;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5); }
+    .heroContainer .profilContainer .row {
+      margin-right: 0px; }
+    .heroContainer .profilContainer .profilPicture {
+      margin-top: 10px;
+      margin-left: 10px;
+      width: 120px;
+      height: 120px;
+      border-radius: 100%; }
+    .heroContainer .profilContainer .infoContainer {
+      position: absolute;
+      left: 35%;
+      top: 50px; }
+      @media screen and (max-width: 1120px) {
+        .heroContainer .profilContainer .infoContainer {
+          left: 43%; } }
+      @media screen and (max-width: 990px) {
+        .heroContainer .profilContainer .infoContainer {
+          left: 30%; } }
+      @media screen and (max-width: 680px) {
+        .heroContainer .profilContainer .infoContainer {
+          left: 40%; } }
+      @media screen and (max-width: 400px) {
+        .heroContainer .profilContainer .infoContainer {
+          left: 43%; } }
+      .heroContainer .profilContainer .infoContainer .nameHero {
+        margin: 0;
+        padding: 0;
+        font-family: 'bangers';
+        font-size: 25px;
+        line-height: 35px; }
+        @media screen and (max-width: 400px) {
+          .heroContainer .profilContainer .infoContainer .nameHero {
+            font-size: 25px; } }
+      .heroContainer .profilContainer .infoContainer .locationHero {
+        font-size: 15px;
+        margin: 0; }
+  .heroContainer .buttonAbandonMission {
+    position: absolute;
+    bottom: 25px;
+    right: 15%;
+    height: 40px;
+    line-height: 15px;
+    padding: 0px 20px;
+    font-size: 13px;
+    background: #FFD42C;
+    transform: skewX(-25deg); }
+    .heroContainer .buttonAbandonMission p {
+      transform: skewX(25deg);
+      color: #272727; }
+
+/*
+HERO CONTAINER - END
+****************/
+/*
+HELP CONTAINER - START
+****************/
+.helpContainer {
+  background: #F0EEEE;
+  padding-bottom: 10px; }
+  .helpContainer h2 {
+    color: #00B7DB;
+    margin-top: 0;
+    font-family: 'bangers';
+    font-size: 30px;
+    text-align: center;
+    padding-top: 30px; }
+  .helpContainer .profilContainer {
+    position: relative;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    height: 230px;
+    background: #F7F7F7;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5); }
+    .helpContainer .profilContainer .row {
+      margin-right: 10px; }
+    .helpContainer .profilContainer .profilPicture {
+      margin-top: 10px;
+      margin-left: 10px;
+      width: 120px;
+      height: 120px;
+      border-radius: 50%; }
+    .helpContainer .profilContainer .infoContainer {
+      position: absolute;
+      left: 35%;
+      top: 50px; }
+      @media screen and (max-width: 1120px) {
+        .helpContainer .profilContainer .infoContainer {
+          left: 43%; } }
+      @media screen and (max-width: 990px) {
+        .helpContainer .profilContainer .infoContainer {
+          left: 30%; } }
+      @media screen and (max-width: 680px) {
+        .helpContainer .profilContainer .infoContainer {
+          left: 40%; } }
+      @media screen and (max-width: 400px) {
+        .helpContainer .profilContainer .infoContainer {
+          left: 43%; } }
+      .helpContainer .profilContainer .infoContainer .nameHero {
+        margin: 0;
+        padding: 0;
+        font-family: 'bangers';
+        font-size: 25px;
+        line-height: 35px; }
+        @media screen and (max-width: 400px) {
+          .helpContainer .profilContainer .infoContainer .nameHero {
+            font-size: 25px; } }
+      .helpContainer .profilContainer .infoContainer .locationHero {
+        font-size: 15px;
+        margin: 0; }
+  .helpContainer .button {
+    display: flex; }
+    .helpContainer .button .buttonValidate {
+      position: absolute;
+      bottom: 25px;
+      left: 5%;
+      height: 40px;
+      line-height: 15px;
+      padding: 0px 20px;
+      font-size: 12px;
+      background: #FFD42C;
+      transform: skewX(-25deg); }
+      @media screen and (max-width: 1220px) {
+        .helpContainer .button .buttonValidate {
+          width: 150px;
+          line-height: 11px;
+          padding: 0px 10px; } }
+      @media screen and (max-width: 990px) {
+        .helpContainer .button .buttonValidate {
+          width: 200px; } }
+      @media screen and (max-width: 620px) {
+        .helpContainer .button .buttonValidate {
+          width: 150px; } }
+      .helpContainer .button .buttonValidate p {
+        transform: skewX(25deg);
+        color: #272727; }
+  .helpContainer .buttonAbandon {
+    position: absolute;
+    bottom: 25px;
+    right: 3%;
+    height: 40px;
+    line-height: 15px;
+    padding: 0px 20px;
+    font-size: 12px;
+    background: #00B7DB;
+    transform: skewX(-25deg); }
+    @media screen and (max-width: 1220px) {
+      .helpContainer .buttonAbandon {
+        width: 150px;
+        line-height: 13px;
+        padding: 0px 15px; } }
+    @media screen and (max-width: 990px) {
+      .helpContainer .buttonAbandon {
+        width: 200px; } }
+    @media screen and (max-width: 620px) {
+      .helpContainer .buttonAbandon {
+        width: 150px; } }
+    .helpContainer .buttonAbandon p {
+      transform: skewX(25deg);
+      color: #272727; }
+
+/*
+HELP CONTAINER - END
+****************/
+/*
+PROFIL ELEMENT - END
+****************/
+/*
+POP UP - START
+****************/
+.modal .buttonAction {
+  height: 40px;
+  line-height: 15px;
+  padding: 0px 20px;
+  font-size: 12px;
+  background: #FFD42C;
+  color: #272727;
+  transform: skewX(-25deg); }
+.modal .buttonElement {
+  transform: skewX(25deg); }
+
+/*
+POP UP - END
+****************/
 .account {
   width: 100%;
   height: 300px;
@@ -460,15 +758,16 @@ label.checklabel:hover {
 
 .card-panel a {
   background: #00b7db; }
-
-.container.faq .faq_title_container {
-  text-align: center;
-  color: #00B7DB; }
-.container.faq .faq_content .faq_question {
-  font-family: lato;
-  font-weight: bold;
-  font-size: 24px;
-  margin-top: 50px; }
-.container.faq .faq_content .faq_responses {
-  font-family: lato;
-  font-size: 16px; }
+  
+.photo_container_edit.center-align{
+				overflow: hidden;
+				background: #FBFBFB;
+				width: 250px;
+				height: 250px;
+				border-radius: 100%;
+				img {
+					object-fit: cover;
+					width: 250px;
+					height: 250px;
+				}
+			}

@@ -29,7 +29,6 @@ $req = $pdo->prepare('DELETE FROM missions WHERE ID = ?');
 $req->execute([$_POST['mission_ID']]);
 header('Location: /dashboard/success');
 
-
 }else{
     $error = "Vous n avez pas assez de tokens. Devenez un super héros pour en gagner plus.";
 }

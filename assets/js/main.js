@@ -7,7 +7,7 @@ modals.forEach((e) => {
 	M.Modal.init(e);
 })
 // scroll reveal
-if(url.match('user_list')){
+if(url.match('user_list') || url.match('account')){
 	window.sr = ScrollReveal()
 	sr.reveal(document.querySelectorAll('.scrollAppear'))
 
@@ -23,7 +23,6 @@ var elem = document.querySelectorAll('select')
 var instance = M.FormSelect.init(elem)
 
 elem.forEach((e) =>{
-    console.log(e)
     let inst = M.FormSelect.init(e)
 })
 
@@ -34,15 +33,6 @@ var instance = M.Carousel.init(elem, {
 
 indicators:true
 });
-
-/* // Google autocomplete
-if(url.match('edit_profile') || url.match('inscription')){
-var input = document.querySelector('.autocompleted');
-var options = {
-    componentRestrictions: { country: 'fr' }
-};
-	const autocomplete = new google.maps.places.Autocomplete(input, options)
-} */
 
 const slider = document.querySelector('.carousel');
 const instanceSlider = M.Carousel.init(slider, {
@@ -86,7 +76,8 @@ function openPicker() {
 	fsClient.pick({
 		fromSources:["local_file_system","facebook","instagram"],
 		transformations:{
-		crop:true},
+		crop:{      force:true,
+		aspectRatio:1}},
 		accept:["image/*"],
 		maxSize:3000000,
 		maxFiles:1,

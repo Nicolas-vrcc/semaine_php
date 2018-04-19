@@ -50,7 +50,7 @@ require_once 'views/includes/header.php';
     <div class="row">
       <h2>Des exemples de <span>Super-Héros</span></h2>
       <div class="col s12 m10 offset-m1 l6 profilContainer">
-        <div class="profilPicture"><img style="border-radius: 50%" src="https://api.adorable.io/avatars/130/Claude" alt="Claude Durluk" ></div>
+        <div class="profilPicture"><img src="https://cdn.filestackcontent.com/f1y7l6wS3GnHMMVISFbQ" alt="nico" class="circle responsive-img"></div>
         <div class="l2 infoContainer ">
           <div class="location">Paris - 18</div>
           <div class="name">Claude Durluk</div>
@@ -63,7 +63,7 @@ require_once 'views/includes/header.php';
 
       <div class="col s12 m10 offset-m1 l6 profilContainer">
         <div class="profilPicture">
-          <img style="border-radius: 50%" src="https://api.adorable.io/avatars/130/Juliette" alt="Juliette Pititou" >
+          <img src="https://cdn.filestackcontent.com/FCHESb5qQ9aWkRYtUMnV" alt="burno" class="circle responsive-img" >
         </div>
         <div class="infoContainer">
           <div class="location">Paris - 16</div>

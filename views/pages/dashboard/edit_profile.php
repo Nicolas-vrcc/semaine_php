@@ -13,7 +13,7 @@ if($header_profile[0] === 'HTTP/1.1 404 Not Found'){
 //To change the avatar
 if (isset($_GET['profilepicture1'])) {
 	$profile_picture = $_GET['profilepicture1'];
-	$request = $pdo->prepare('UPDATE USERS SET avatar_picture = :profile_picture WHERE ID = :id');
+	$request = $pdo->prepare('UPDATE users SET avatar_picture = :profile_picture WHERE ID = :id');
 	$request->execute([
 		'profile_picture' => $profile_picture,
 		'id' => $_SESSION['auth']->ID
@@ -52,7 +52,7 @@ if(!empty($_POST)){
 
 	if(filter_var($email, FILTER_VALIDATE_EMAIL)){
 		//Save datas to DB
-		$prepare = $pdo->prepare('UPDATE USERS SET email = :email, location = :location, skills = :skills, bio = :bio, latitude = :latitude, longitude = :longitude WHERE ID = :id');
+		$prepare = $pdo->prepare('UPDATE users SET email = :email, location = :location, skills = :skills, bio = :bio, latitude = :latitude, longitude = :longitude WHERE ID = :id');
 		$prepare->bindValue(':email', $email);
 		$prepare->bindValue(':location', $location);
 		$prepare->bindValue(':skills', $checkBoxValue);

@@ -8,7 +8,9 @@ $info = $infoQuery->fetch();
 $to = $info->email;
 $name = $info->first_name;
 $fromEmail = $_SESSION['auth']->email;
-$header = "From : $fromEmail";
+$header = "From : $fromEmail".  "\r\n".
+"Reply-To: $fromEmail" . "\r\n" .
+"X-Mailer: PHP/" . phpversion();
 
 if (isset($_POST['subject']) && isset($_POST['content'])) {
 

@@ -110,7 +110,7 @@ $coord = array($profil->latitude, $profil->longitude);
 
 <div class="container map">
   <div class="row title">
-    <p class="title center-align">Où peut se déplacer votre héros :</p>
+    <p class="title center-align">Où se trouve votre héros :</p>
   </div>
 
   <div class="row map">
@@ -118,12 +118,6 @@ $coord = array($profil->latitude, $profil->longitude);
   </div>
 </div>
 
-
-<script type="text/javascript">
-  const coord = <?= json_encode($coord); ?>
-</script>
- 
- 
 <?php
 require_once 'views/includes/footer.php';
 ?>

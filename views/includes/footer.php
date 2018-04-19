@@ -1,4 +1,4 @@
-  </main>  <footer class="page-footer">
+</main>  <footer class="page-footer">
     <div class="container">
       <div class="row">
         <div class="col l6 s12">
@@ -26,6 +26,8 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
 <!-- Filestack API -->
 <script src="https://static.filestackapi.com/v3/filestack.js"></script>
+<!-- Scroll reveal -->
+<script src="https://unpkg.com/scrollreveal/dist/scrollreveal.min.js"></script>
 <!-- Main JS -->
 <script src="/assets/js/main.js"></script>
 <!-- Maps API -->

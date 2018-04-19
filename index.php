@@ -15,11 +15,7 @@ if ($q === '') {
     $page = 'connexion';
 } else if ($q === 'inscription') {
     $page = 'inscription';
-}  else if ($q === 'cgu') {
-    $page = 'cgu';
-}  else if ($q === 'faq') {
-    $page = 'faq';
-}  else if ($q === 'dashboard/account') {
+} else if ($q === 'dashboard/account') {
     $page = 'dashboard/account';
 } else if ($q === 'dashboard/logout') {
     $page = 'dashboard/logout';
@@ -37,7 +33,12 @@ if ($q === '') {
     $page = 'dashboard/pay';
 }  else if ($q === 'dashboard/error') {
     $page = 'dashboard/error';
-} else {
+} else if ($q === 'cgu') {
+    $page = 'cgu';
+} else if ($q === 'faq') {
+    $page = 'faq';
+} 
+ else {
     $page = '404';
 }
 

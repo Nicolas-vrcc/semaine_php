@@ -8,7 +8,7 @@ $heroList = $req->fetchAll();
 <?php foreach($heroList as $entry): ?>
             <div class="col s12 m10 offset-m1 l6 profilContainer">
                 <div class="profilPicture">
-                    <img src=<?= $entry->avatar_picture ?> alt="helped_pic" >
+                    <img class="profilPicture" src=<?= $entry->avatar_picture ?> alt="helped_pic" >
                 </div>
                 <div class="l2 infoContainer ">
                     <p class="locationHero"></p>

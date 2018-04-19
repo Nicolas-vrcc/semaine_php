@@ -1,5 +1,5 @@
 <?php
-$req = $pdo->prepare('SELECT * FROM users INNER JOIN missions ON users.ID = missions.ID_hero WHERE ID_helped = ?');
+$req = $pdo->prepare('SELECT * FROM users INNER JOIN missions ON users.ID = missions.ID_helped WHERE ID_hero = ?');
 $req->execute([$_SESSION['auth']->ID]);
 $helperList = $req->fetchAll();
 
@@ -8,7 +8,7 @@ $helperList = $req->fetchAll();
 <?php foreach($helperList as $entry): ?>
             <div class="col s12 m10 offset-m1 l6 profilContainer">
                 <div class="profilPicture">
-                    <img src=<?= $entry->avatar_picture ?> alt="helped" >
+                    <img class="profilPicture" src=<?= $entry->avatar_picture ?> alt="helped" >
                 </div>
                 <div class="infoContainer">
                     <p class="locationHero"></p>
@@ -38,7 +38,7 @@ $helperList = $req->fetchAll();
             <div class="price row">
             <form id="main" action="/dashboard/pay" method="post">
                 <input name="mission_ID" type="hidden" value="<?= $entry->ID ?>">
-                <input name="hero_ID" type="hidden" value="<?= $entry->ID_hero ?>">
+                <input name="hero_ID" type="hidden" value="<?= $entry->ID_helped ?>">
                 <input id="cost" type="number" name="cost" class="cost col s5" required>
                 <img src="../../../../assets/img/supercoin.svg" alt="superCoins" class="cost col s3 l2">
             </div>
